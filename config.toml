@@ -1,0 +1,43 @@
+baseurl = "http://www.bigger-tree.com/"
+languageCode = "en-us"
+title = "BiggeR-tRee"
+theme = "hugo-lithium"
+googleAnalytics = "UA-120826234-1"
+disqusShortname = "bigger-tree"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+	weight = 1
+[[menu.main]]
+    name = "Myself"
+    url = "/resume/"
+	weight = 2
+[[menu.main]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/"
+	weight = 3
+
+
+[params]
+    description = "A website built through Hugo and blogdown."
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.11.0"
+    highlightjsCDN = "//cdn.bootcss.com"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdn.bootcss.com"
+    MathJaxVersion = "2.7.1"
+
+    [params.logo]
+    url = "logo.png"
+    width = 60
+    height = 60
+    alt = "Logo"
+

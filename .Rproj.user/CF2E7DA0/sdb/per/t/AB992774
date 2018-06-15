@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: Resume\nauthor: Sjoerd\ndate: '2018-06-10'\nslug: resume\ncategories:\n  - CV\n  - Resume\ntags:\n  - CV\n  - Resume\n  - Sjoerd Dikkerboom\n---\n\nCurrently i'm employed at the municipality of Nijmegen (the Netherlands) as a Researcher. And i like to tinker with R =). \n\nI have a masters degree both in Sociology and Urban Geography. In my work I specialize in quantitative research and data science.\n\nAnd this is me =):\n![thats me! =)](/ik.jpeg)\n",
+    "created" : 1528657348613.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3496124024",
+    "id" : "AB992774",
+    "lastKnownWriteTime" : 1529009519,
+    "last_content_update" : 1529009519725,
+    "path" : "C:/Users/Administrator/Desktop/Projects/website/content/resume.md",
+    "project_path" : "content/resume.md",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
