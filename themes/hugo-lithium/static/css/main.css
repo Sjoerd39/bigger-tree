@@ -38,7 +38,7 @@ code {
   padding: 20px 0;
   position: relative;
   background: #f5f5f5;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .nav {
@@ -60,7 +60,8 @@ code {
 
 .nav-logo img {
   display: block;
-  max-height: 40px;
+  height: auto;
+  max-height: 80px;
   width: auto;
   border-radius: 50%;
 }
@@ -97,11 +98,7 @@ code {
   background: #33cf33a3;
 }
 
-.nav-links a:hover {
-  color: #000;
-}
-
-.content {
+.content { 
   max-width: 700px;
   margin: 40px auto 10px;
   padding: 0 15px;
@@ -268,11 +265,11 @@ code {
   }
 
   .nav-logo {
-    margin-top: -13px;
+    margin-top: -8px;
   }
 
   .nav-logo img {
-    max-height: 50px;
+    max-height:80px;
   }
 
   .nav-links {

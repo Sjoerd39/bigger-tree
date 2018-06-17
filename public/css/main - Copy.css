@@ -98,7 +98,11 @@ code {
   background: #33cf33a3;
 }
 
-.content { 
+.nav-links a:hover {
+  color: #000;
+}
+
+.content {
   max-width: 700px;
   margin: 40px auto 10px;
   padding: 0 15px;
