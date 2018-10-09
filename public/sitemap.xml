@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2018-06-18T21:48:51-07:00</lastmod>
+    <loc>/2018/10/09/long-words-with-seven-segment-displays/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/resume/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <loc>/about/</loc>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -28,25 +28,32 @@
   </url>
   
   <url>
+    <loc>/tags/about/</loc>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/about/</loc>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2018-06-18T21:48:51-07:00</lastmod>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bigger-tree/</loc>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cv/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/cv/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,13 +65,19 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,25 +95,49 @@
   
   <url>
     <loc>/tags/resume/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/resume/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <loc>/tags/seven-segment-displays/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/sjoerd-dikkerboom/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <loc>/categories/seven-segment-displays/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/strings/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/strings/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tom-scott/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/words/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

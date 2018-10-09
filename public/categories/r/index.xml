@@ -6,10 +6,21 @@
     <description>Recent content in R on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Long words with Seven-Segment Displays</title>
+      <link>/2018/10/09/long-words-with-seven-segment-displays/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/09/long-words-with-seven-segment-displays/</guid>
+      <description>One of the most entertaining things you could do at primary school was spelling words with the seven-segment calculator. A little while ago Tom Scott did a video about seven-segment displays. You can see it here:
+
+ This is exactly the quick and fun exercise i need to start my blog. And i think R (plus some packages) is especially suited for this task. So, what are the longest words we can make with the limitations of a seven-segment display?</description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>

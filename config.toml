@@ -14,10 +14,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/about/"
 	weight = 1
 [[menu.main]]
-    name = "Myself"
-    url = "/resume/"
-	weight = 2
-[[menu.main]]
     name = "LinkedIn"
     url = "https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/"
 	weight = 3

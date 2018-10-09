@@ -6,30 +6,29 @@
     <description>Recent content on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jun 2018 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Mon, 18 Jun 2018 21:48:51 -0700</pubDate>
+      <title>Long words with Seven-Segment Displays</title>
+      <link>/2018/10/09/long-words-with-seven-segment-displays/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
-      <description>Hello! My name is Sjoerd Dikkerboom. Currently I work at the municipality of Nijmegen (the Netherlands) as a Researcher. I have a masters degree both in Sociology and Urban Geography. In my work I specialize in quantitative research and data science. In my free time i&amp;rsquo;m learning chinese with some succes: 你好，我的中文名字是大树 =). And sometimes i like to tinker with R and write about it here.
-[insert picture of me]</description>
+      <guid>/2018/10/09/long-words-with-seven-segment-displays/</guid>
+      <description>One of the most entertaining things you could do at primary school was spelling words with the seven-segment calculator. A little while ago Tom Scott did a video about seven-segment displays. You can see it here:
+
+ This is exactly the quick and fun exercise i need to start my blog. And i think R (plus some packages) is especially suited for this task. So, what are the longest words we can make with the limitations of a seven-segment display?</description>
     </item>
     
     <item>
-      <title>Resume</title>
-      <link>/resume/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/resume/</guid>
-      <description>Currently i&amp;rsquo;m employed at the municipality of Nijmegen (the Netherlands) as a Researcher. And i like to tinker with R =).
-I have a masters degree both in Sociology and Urban Geography. In my work I specialize in quantitative research and data science.
-And this is me =): </description>
+      <guid>/about/</guid>
+      <description>Hello! My name is Sjoerd Dikkerboom. Currently I&amp;rsquo; epmployed at the municipality of Nijmegen (the Netherlands) as a Researcher. I have a masters degree both in Sociology and Urban Geography. In my work I specialize in quantitative research and data science. In my free time i&amp;rsquo;m learning chinese with some succes: 你好，我的中文名字是大树 =). And sometimes i like to tinker with R and write about it here.  And this is me =) :</description>
     </item>
     
     <item>

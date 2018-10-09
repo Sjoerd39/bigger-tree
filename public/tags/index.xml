@@ -6,17 +6,26 @@
     <description>Recent content in Tags on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Cv</title>
-      <link>/tags/cv/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      <title>About</title>
+      <link>/tags/about/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cv/</guid>
+      <guid>/tags/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bigger Tree</title>
+      <link>/tags/bigger-tree/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bigger-tree/</guid>
       <description></description>
     </item>
     
@@ -26,6 +35,15 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
@@ -50,18 +68,45 @@
     <item>
       <title>Resume</title>
       <link>/tags/resume/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/resume/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sjoerd Dikkerboom</title>
-      <link>/tags/sjoerd-dikkerboom/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      <title>Seven Segment Displays</title>
+      <link>/tags/seven-segment-displays/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sjoerd-dikkerboom/</guid>
+      <guid>/tags/seven-segment-displays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strings</title>
+      <link>/tags/strings/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/strings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tom Scott</title>
+      <link>/tags/tom-scott/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tom-scott/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Words</title>
+      <link>/tags/words/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/words/</guid>
       <description></description>
     </item>
     
