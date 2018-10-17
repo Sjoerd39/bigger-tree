@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Waterlevels on BiggeR-tRee</title>
+    <link>/tags/waterlevels/</link>
+    <description>Recent content in Waterlevels on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/waterlevels/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Waterlevels of the river Waal animated</title>
+      <link>/2018/10/17/waterlevels-of-the-waal-river-animated/</link>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/17/waterlevels-of-the-waal-river-animated/</guid>
+      <description>Inspired by the dry weather of the last couple of months in the Neterlands, the overhaul of the gganimate package and examples like on this blog: https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html i wanted to see how low the waterlevels really are. And ofcourse to animate the visuals!
+Data of waterlevels in the Netherlands are available through: https://waterinfo.rws.nl/#!/nav/index/ (in dutch)
+loading packages
+# devtools::install_github(&amp;#39;thomasp85/gganimate&amp;#39;)# devtools::install_github(&amp;quot;thomasp85/transformr&amp;quot;)library(tidyverse)library(janitor)library(lubridate)library(gganimate)library(animation)library(tweenr)I manually added some metadata of the measuring stations.</description>
+    </item>
+    
+  </channel>
+</rss>

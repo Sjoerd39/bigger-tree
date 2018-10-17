@@ -20,5 +20,8 @@ And this is me =) :
 
 This website is made with [**R/ Rstudio**](https://www.rstudio.com/), the [**blogdown**](https://github.com/rstudio/blogdown) package, [**Hugo**](https://gohugo.io/) and adapted from the [**Lithium theme**](https://github.com/yihui/hugo-lithium). 
 
+<br></br>
+
 Disclaimer: The name of the website is a (poor) translation of my lastname. There won't be many trees on this blog.
 
+<br></br>

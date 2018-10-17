@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>Waterlevels of the river Waal animated - BiggeR-tRee</title>
+<meta property="og:title" content="Waterlevels of the river Waal animated - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Waterlevels of the river Waal animated</h1>
+
+    
+    <span class="article-date">2018/10/17</span>
+    
+
+    <div class="article-content">
+      <p>Inspired by the dry weather of the last couple of months in the Neterlands, the overhaul of the gganimate package and examples like on this blog: <a href="https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html" class="uri">https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html</a> i wanted to see how low the waterlevels really are. And ofcourse to animate the visuals!</p>
+<p>Data of waterlevels in the Netherlands are available through: <a href="https://waterinfo.rws.nl/#!/nav/index/" class="uri">https://waterinfo.rws.nl/#!/nav/index/</a> (in dutch)</p>
+<p>loading packages</p>
+<pre class="r"><code># devtools::install_github(&#39;thomasp85/gganimate&#39;)
+# devtools::install_github(&quot;thomasp85/transformr&quot;)
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(gganimate)
+library(animation)
+library(tweenr)</code></pre>
+<p>I manually added some metadata of the measuring stations.</p>
+<pre class="r"><code>pointinfo &lt;- data.frame(station = c(&quot;Dordrecht&quot;, &quot;Hoek van Holland&quot;,    
+                                    &quot;Lobith&quot;,   &quot;Nijmegen haven&quot;,   
+                                    &quot;Tiel Waal&quot;,    &quot;Vlaardingen&quot;,  &quot;Vuren&quot;),
+                        km = c(53,  2,  165,    141,    114,    21, 79),
+                        river = c( &quot;beneden merwede&quot;, &quot;nieuwe waterweg&quot;,    
+                                   &quot;rijn&quot;,  &quot;waal&quot;, &quot;waal&quot;, &quot;nieuwe maas&quot;,  &quot;waal&quot;))</code></pre>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+
