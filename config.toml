@@ -1,4 +1,4 @@
-baseurl = "http://www.bigger-tree.com/"
+baseurl = "http://www.bigger-tree.org/"
 languageCode = "en-us"
 title = "BiggeR-tRee"
 theme = "hugo-lithium"
