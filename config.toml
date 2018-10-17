@@ -2,8 +2,8 @@ baseurl = "http://www.bigger-tree.com/"
 languageCode = "en-us"
 title = "BiggeR-tRee"
 theme = "hugo-lithium"
-googleAnalytics = "UA-120826234-1"
 disqusShortname = "bigger-tree"
+googleAnalytics = "UA-120826234-1"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
