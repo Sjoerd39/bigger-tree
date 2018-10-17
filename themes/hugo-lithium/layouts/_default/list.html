@@ -1,7 +1,8 @@
 {{ partial "header.html" . }}
 
 <main class="content" role="main">
-
+{{ template "_internal/google_analytics.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
   {{ if and .IsHome .Content }}
   <article class="article">
     <div class="article-content">
