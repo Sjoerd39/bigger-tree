@@ -6,10 +6,19 @@
     <description>Recent content in Categories on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>7hills</title>
+      <link>/categories/7hills/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/7hills/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>About</title>
@@ -23,7 +32,7 @@
     <item>
       <title>Gganimate</title>
       <link>/categories/gganimate/</link>
-      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/gganimate/</guid>
       <description></description>
@@ -32,9 +41,18 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Running</title>
+      <link>/categories/running/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/running/</guid>
       <description></description>
     </item>
     

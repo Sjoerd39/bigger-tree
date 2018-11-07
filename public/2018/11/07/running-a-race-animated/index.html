@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>Running a race animated - BiggeR-tRee</title>
+<meta property="og:title" content="Running a race animated - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Running a race animated</h1>
+
+    
+    <span class="article-date">2018/11/07</span>
+    
+
+    <div class="article-content">
+      <p>The 7-hills running race (7-heuvelenloop) is a yearly running race in and around Nijmegen. The main event is a race of 15 kilometers long. I ran it myself a couple of times, but not in last year. On to animating the race. Using the following packages:</p>
+
+<pre><code class="language-r">library(tidyverse)
+library(zoo)
+library(readxl)
+library(lubridate)
+library(magrittr)
+library(gganimate)
+library(ggmap)
+library(ggrepel)
+</code></pre>
+
+<p>I took data of 5 runners from the website with the results and times each kilometer. These are the times of the winner, the slowest finisher and three runners in between.</p>
+
+<pre><code class="language-r">##times from the 2017 race: https://www.nnzevenheuvelenloop.nl/deelnemers/zevenheuvelenloop/uitslagen/ (in dutch)
+times &lt;- data.frame(runners = rep(1:5, each = 15),
+                    km = rep(1:15, 5),
+                    time = rep(c(&quot;00:02:37&quot;, &quot;00:05:27&quot;,    &quot;00:08:19&quot;, &quot;00:11:07&quot;, &quot;00:13:58&quot;, &quot;00:16:46&quot;, &quot;00:19:27&quot;, &quot;00:22:22&quot;,
+                                 &quot;00:25:11&quot;, &quot;00:27:46&quot;,    &quot;00:30:37&quot;, &quot;00:33:24&quot;, &quot;00:36:02&quot;, &quot;00:38:39&quot;, &quot;00:41:16&quot;,
+                                 &quot;00:05:41&quot;, &quot;00:11:27&quot;,    &quot;00:17:22&quot;, &quot;00:23:08&quot;, &quot;00:29:01&quot;, &quot;00:34:53&quot;, &quot;00:40:30&quot;, &quot;00:46:21&quot;, 
+                                 &quot;00:52:05&quot;, &quot;00:57:37&quot;,    &quot;01:03:44&quot;, &quot;01:09:32&quot;, &quot;01:15:02&quot;, &quot;01:20:39&quot;, &quot;01:26:03&quot;,
+                                 &quot;00:05:01&quot;, &quot;00:09:59&quot;,    &quot;00:15:12&quot;, &quot;00:20:24&quot;, &quot;00:25:55&quot;, &quot;00:31:16&quot;, &quot;00:36:29&quot;, &quot;00:42:08&quot;, 
+                                 &quot;00:47:34&quot;, &quot;00:52:41&quot;,    &quot;00:58:21&quot;, &quot;01:03:53&quot;, &quot;01:09:01&quot;, &quot;01:14:14&quot;, &quot;01:19:24&quot;,
+                                 &quot;00:08:57&quot;, &quot;00:18:21&quot;,    &quot;00:27:31&quot;, &quot;00:39:57&quot;, &quot;00:48:44&quot;, &quot;00:57:58&quot;, &quot;01:13:31&quot;, &quot;01:23:03&quot;, 
+                                 &quot;01:32:01&quot;, &quot;01:43:34&quot;,    &quot;01:52:10&quot;, &quot;02:01:01&quot;, &quot;02:09:31&quot;, &quot;02:18:24&quot;, &quot;02:27:07&quot;,
+                                 &quot;00:04:02&quot;, &quot;00:07:55&quot;,    &quot;00:11:53&quot;, &quot;00:15:55&quot;, &quot;00:20:07&quot;, &quot;00:24:11&quot;, &quot;00:28:06&quot;, &quot;00:32:22&quot;, 
+                                 &quot;00:36:30&quot;, &quot;00:40:17&quot;,    &quot;00:44:29&quot;, &quot;00:48:33&quot;, &quot;00:52:21&quot;, &quot;00:56:10&quot;, &quot;00:59:59&quot;)))
+</code></pre>
+
+<p>The route was already available for downloading (<a href="https://www.gpscoordinaten.nl/route-track-detail.php?id=27527">https://www.gpscoordinaten.nl/route-track-detail.php?id=27527</a> , dutch). Prepared for analysis with Qgis.</p>
+
+<pre><code class="language-r">## route coordinates: https://www.gpscoordinaten.nl/route-track-detail.php?id=27527 downloaded and prepared with Qgis
+route &lt;- read.csv2(&quot;zevenheuvelenpointsm.csv&quot;, stringsAsFactors = FALSE)
+## coordinate points are equally spaced from eachother divided over the 15 km. Adding distance to the coordinates in meters...
+route &lt;- route %&gt;% 
+  mutate(x = 15000/(nrow(route)-1),
+         meter = cumsum(x)-x) %&gt;% 
+  select(X, Y, meter)
+
+## ...in kilometers
+route$km &lt;- NA  
+
+for (i in seq(0, 15000, by = 1000)) {
+  route$km[which(abs(route$meter-i) == min(abs(route$meter-i)))] &lt;- i / 1000
+}
+</code></pre>
+
+<p>With the data of the path of the race and running times it&rsquo;s a matter of joining them. I used two joins to avoid the  &lsquo;cannot allocate vector of size..&rsquo; error when using the full join on both complete data sets. The points are equal distances from each other. So it&rsquo;s pretty easy to calculate the times the runners pass each point on the route.</p>
+
+<pre><code class="language-r">route_times &lt;- times %&gt;% 
+  ## joining meters of the route to running times
+  full_join(route %&gt;% select(meter, km), by = &quot;km&quot;) %&gt;% 
+  ## getting meters along the route for every runner
+  complete(runners, meter) %&gt;% 
+  ## joining remaining route data
+  left_join(route %&gt;% select(-km), by = &quot;meter&quot;) %&gt;% 
+  mutate(km = if_else(meter == 0 , 1, km),
+         time = if_else(meter == 0 , &quot;00:00:00&quot;, as.character(time))) %&gt;% 
+  filter(!is.na(runners)) %&gt;% 
+  ## fill in amount of seconds run so far for each point on the route.
+  group_by(runners) %&gt;% 
+  mutate(sec = na.approx(period_to_seconds(hms(time)))) %&gt;% 
+  fill(km, .direction = &quot;up&quot;) %&gt;% 
+  ungroup() %&gt;% 
+  mutate(X = as.numeric(as.character(X)),
+         Y = as.numeric(as.character(Y)))
+</code></pre>
+
+<p>Making some labels for the animation later. calculating the avarage speed for each runner in each section and adding their finish times.</p>
+
+<pre><code class="language-r">## calculate avarage speed each km for labeling
+avg_speed &lt;- route_times %&gt;% 
+  group_by(runners, km) %&gt;% 
+  summarise(sec_tot_prev = max(sec)) %&gt;% 
+  mutate(km = km + 1) %&gt;% 
+  right_join(route_times %&gt;% group_by(runners, km) %&gt;% 
+               summarise(sec_tot_km = max(sec)), 
+             by = c(&quot;runners&quot;, &quot;km&quot;)) %&gt;% 
+  mutate(avg_speed = if_else(km == 1, round(3600 / sec_tot_km, 1),
+                             round(3600 / (sec_tot_km - sec_tot_prev), 1))) %&gt;%   
+  select(runners, km, avg_speed)
+
+
+## finishtime for labeling
+finish_time &lt;- route_times %&gt;% 
+  group_by(runners) %&gt;% 
+  filter(meter == max(meter)) %&gt;% 
+  mutate(finishtime = time) %&gt;% 
+  select(runners, finishtime)
+</code></pre>
+
+<p>To make the data set smaller and a bit easier to animate we take each 15 seconds of the race.</p>
+
+<pre><code class="language-r">## calculate the closes position of the runner every 15 seconds. So runners progress in 
+## even timeframes for easier animations
+
+route_times &lt;-  route_times %&gt;% 
+  mutate(sec15 = ceiling(sec / 15) * 15)
+</code></pre>
+
+<p>Get the data for each runner every 15 seconds of the race. Also adding the labels back to the dataset.</p>
+
+<pre><code class="language-r">## select the point where the runners are each 15 seconds
+route_times_15sec &lt;- route_times %&gt;%
+  group_by(sec15, runners) %&gt;% 
+  summarise_all(.funs = first) %&gt;% 
+  ## add the labels
+  left_join(avg_speed, by = c(&quot;runners&quot;, &quot;km&quot;)) %&gt;% 
+  left_join(finish_time, by = &quot;runners&quot;) %&gt;% 
+  ungroup() %&gt;% 
+  mutate(label_t = paste0(finishtime, &quot; -- &quot;, avg_speed, &quot; km/h&quot;),
+         label_time = seconds_to_period(sec15),
+         label_time = paste0(&quot;race time: &quot;, label_time)) %&gt;% 
+  select(-time)
+</code></pre>
+
+<p>Getting the background map through <code>get_map</code>. This needs a registered google static map API. You can get one yourself here: <a href="https://cloud.google.com/maps-platform/">https://cloud.google.com/maps-platform/</a>. The map is centered at the mean of the coordinates of the route.</p>
+
+<pre><code class="language-r">## get mean coordinates for the centre of the plot
+
+lat &lt;- mean(c(max(route_times$Y), min(route_times$Y)))
+long &lt;- mean(c(max(route_times$X), min(route_times$X)))
+
+## register_google(key = &quot;key&quot;)
+## get the background map
+m &lt;- get_map(c(long, lat), zoom = 13, 
+             source = &quot;stamen&quot;,
+             maptype = &quot;toner&quot;)
+</code></pre>
+
+<p>Making the plot. Using ggrepel to have labels that behave nicely in the animation. When you&rsquo;re making bigger sized animations it is sometimes good to restrict the area where these labels can be. Otherwise they might appear &lsquo;jittery&rsquo;. There are just 2 (!) gganimate options to make the animations.</p>
+
+<pre><code class="language-r">p &lt;- ggmap(m) +
+  scale_x_continuous(limits = c(min(route_times$X), max(route_times$X)), expand = c(0.0015, 0.0015)) +
+  scale_y_continuous(limits = c(min(route_times$Y), max(route_times$Y)), expand = c(0.0015, 0.0015)) +
+  geom_point(data = route_times_15sec, aes(x = X, y = Y,
+                                          color = as.factor(runners)), size = 5)+
+  geom_label_repel(data = route_times_15sec,
+                   aes(x = X, y = Y,
+                       fill = as.factor(runners),
+                       label = label_t),
+                   size = 4, fontface = &quot;bold&quot;,
+                   ## padding to keep the labels from covering the points
+                   box.padding = 0.35, point.padding = 1,
+                   ## without the nudging the labels are more jittery
+                   nudge_y = 0.0025, nudge_x = 0.02) +
+  ## couldnt get the title to work so added a label layer with the racetime
+  geom_label(data = route_times_15sec %&gt;% filter(runners == 4),
+             aes(x =  5.867, y = 51.79665,label = label_time),
+             size = 4.5, color = &quot;black&quot;, fill = &quot; white&quot;, fontface = &quot;bold&quot;, hjust = &quot;left&quot;) +
+  theme_void() +
+  theme(legend.position = &quot;none&quot;) +
+  ## gganimate options
+  transition_reveal(runners, sec15) +
+  ease_aes(&quot;linear&quot;)
+
+animate(p, nframes = 500, width = 600, height = 600)
+</code></pre>
+
+<p><img src="/post/2018-11-07-running-a-race-animated_files/figure-html/pre_animating.gif" alt="" /></p>
+
+<p>The speed difference between the fastest and slowest runner is really something! But even the difference between the winner and someone running at 15 km/ hour is clearly visible. 2018-11-18 will be this years race, same route.</p>
+
+<p><br></br></p>
+
+<p>I made this animation almost a year ago. With the older gganimate syntax i managed to combine geom_point and geom_path in one animation and have the runners leave a trace as they run. I couldn&rsquo;t find a way to do that now. Anyone know how to do that?</p>
+
+<p>I have at least one more animating project left to write about. See you then!</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+

@@ -6,10 +6,20 @@
     <description>Recent content in Gganimate on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/gganimate/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Running a race animated</title>
+      <link>/2018/11/07/running-a-race-animated/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/07/running-a-race-animated/</guid>
+      <description>The 7-hills running race (7-heuvelenloop) is a yearly running race in and around Nijmegen. The main event is a race of 15 kilometers long. I ran it myself a couple of times, but not in last year. On to animating the race. Using the following packages:
+library(tidyverse) library(zoo) library(readxl) library(lubridate) library(magrittr) library(gganimate) library(ggmap) library(ggrepel)  I took data of 5 runners from the website with the results and times each kilometer.</description>
+    </item>
     
     <item>
       <title>Water levels of the Waal river animated</title>
