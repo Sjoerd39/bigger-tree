@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/11/20/animated-scribbles/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/11/07/running-a-race-animated/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
   </url>
@@ -23,20 +28,14 @@
   </url>
   
   <url>
-    <loc>/tags/7hills/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/7hills/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/about/</loc>
-    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
+    <loc>/tags/7hills/</loc>
+    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,8 +46,20 @@
   </url>
   
   <url>
+    <loc>/tags/about/</loc>
+    <lastmod>2018-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/antonio-s%C3%A1nchez/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,32 +76,32 @@
   </url>
   
   <url>
-    <loc>/tags/gganimate/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <loc>/categories/gganimate/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/gganimate/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <loc>/tags/gganimate/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -101,20 +112,26 @@
   </url>
   
   <url>
-    <loc>/tags/running/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/running/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/seven-segment-displays/</loc>
-    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <loc>/tags/running/</loc>
+    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/scribbles/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/scribbles/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -125,13 +142,19 @@
   </url>
   
   <url>
-    <loc>/tags/strings/</loc>
+    <loc>/tags/seven-segment-displays/</loc>
     <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/strings/</loc>
+    <lastmod>2018-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/strings/</loc>
     <lastmod>2018-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -149,25 +172,25 @@
   </url>
   
   <url>
-    <loc>/tags/waal/</loc>
-    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/waal/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/water-levels/</loc>
+    <loc>/tags/waal/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/water-levels/</loc>
+    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/water-levels/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

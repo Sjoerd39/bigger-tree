@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>Animated scribbles - BiggeR-tRee</title>
+<meta property="og:title" content="Animated scribbles - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">Animated scribbles</h1>
+
+    
+    <span class="article-date">2018/11/20</span>
+    
+
+    <div class="article-content">
+      <p>Yes! Another animation! I saw the post of Antonio Sánchez Chinchón about his &lsquo;frankenstein scribble&rsquo; (<a href="https://fronkonstin.com/2018/04/17/pencil-scribbles/" target="_blank">Link to his blogpost</a>) and immediatly thought this would like very nice when animated. Antonio uses the <a href="https://simple.wikipedia.org/wiki/Travelling_salesman_problem" target="_blank">Travelling Salesman Problem</a> and the <code>TSP</code> package to make a scribble based on a picture. The Basics from Antonio&rsquo;s code stay the same. So, let&rsquo;s see how to animate it!</p>
+
+<pre><code class="language-r">library(tidyverse)
+library(imager)
+library(scales)
+library(TSP)
+library(gganimate)
+library(tweenr)
+library(animation)
+</code></pre>
+
+<p>Instead of Frankenstein, let&rsquo;s use this picture of my girlfriend this time. Hopefully the end result will look nice enough.</p>
+
+<pre><code class="language-r">file &lt;- &quot;picture.jpg&quot;
+</code></pre>
+
+<p><img alt = 'picture' width='200' src='/post/2018-10-20-animated-scribbles-animated_files/fei.jpg' /></p>
+
+<p>Like the code before the pictures is converted to a gray scale picture and then to a matrix of data points we can use for the TSP algorithm.</p>
+
+<pre><code class="language-r"># Load, convert to grayscale
+x &lt;- load.image(file) %&gt;% 
+  grayscale() %&gt;%  
+  as.matrix
+
+# Convert the matrix to data frame 
+dimnames(x) = list(row = 1:nrow(x), col = 1:ncol(x))
+x &lt;- reshape2::melt(x)
+colnames(x)=c(&quot;x&quot;,&quot;y&quot;,&quot;value&quot;)  
+</code></pre>
+
+<p>The next bit of code takes 200 samples of 400 points from the matrix. Each sample contains 400 pairs of x and y coordinates. With the <code>TSP</code> package the shortest route between these points is calculated. This route is later used as the order in which the lines are drawn. Instead of adding all these layers to a <code>ggplot</code> object, we store the information in a list of data frames. Then all these data frames are combined into one. And we add some extra information that will be used later for animating the data.</p>
+
+<pre><code class="language-r"># start df
+data_to_animate &lt;- list()
+
+# This loop adds layers to the plot
+for (i in 1:200){
+  
+  print(paste(i,&quot;out of 200&quot;))
+  # Weighted sample of pixels
+   data &lt;- x %&gt;% 
+    sample_n(400, weight=1-value) %&gt;% 
+    select(x,y) 
+  
+  # Compute distances and solve TSP
+  sol &lt;- as.TSP(dist(data)) %&gt;% 
+    solve_TSP(method = &quot;arbitrary_insertion&quot;) %&gt;% 
+    as.integer()
+  
+  # # Create a dataframe with the output of TSP
+  order &lt;- data.frame(id = sol)
+  order &lt;- order %&gt;% mutate(order = 1:nrow(data))
+  
+  # Rearrange the original points according the TSP output
+ 
+  data2 &lt;- data %&gt;% 
+    mutate(id = 1:nrow(data)) %&gt;% 
+    inner_join(order, by=&quot;id&quot;) %&gt;% arrange(order)
+  
+  # specifying attributes for the animation
+  data_to_animate[[i]] &lt;- data2 %&gt;% 
+    mutate(line = i,
+           alpha = runif(1, min = 0, max = 0.10)) %&gt;% 
+  select(line, order, x, y, alpha) 
+ 
+}  
+
+data_anim &lt;- do.call(bind_rows, data_to_animate) 
+plot_data &lt;- data_anim %&gt;%
+  mutate(alpha = as.numeric(alpha),
+         ease = &quot;linear&quot;)
+</code></pre>
+
+<p>Now the animating begins! The next functions prepares the data for animating. The positions in between the &lsquo;order&rsquo; points of the lines is calculated for a smoother animation. And then we calculate a dataframe with a timepoint when the lines should appear in the animation.</p>
+
+<pre><code class="language-r">plot_data_tween &lt;- tween_elements(plot_data, time = &quot;order&quot;,  group = &quot;line&quot;, ease = &quot;ease&quot;, nframes = 200)
+df_tween_appear &lt;- tween_appear(plot_data_tween, time = 'order', nframes = 200)
+</code></pre>
+
+<p>The animation is basicly a loop and makes a plot for each timepoint in the animation. All of the images are then added together. I added a simple progress message as the animating process can take a while&hellip;</p>
+
+<pre><code class="language-r">oopt&lt;-ani.options(interval=1/10, ani.width = 200, ani.height = 250)
+saveGIF({for (i in 1:max(df_tween_appear$.frame)){
+  plot_data &lt;- 
+    df_tween_appear %&gt;% filter(.frame == i, .age &gt; -0) 
+  g &lt;- plot_data %&gt;% 
+    ggplot()+
+    geom_path(aes(x = x, y = y, group = .group), alpha = 0.08) +
+    theme_void() +
+    theme(legend.position=&quot;none&quot;)+
+    ## to flip the coordinates, otherwise the picture ends up being upside down
+    scale_y_continuous(trans=reverse_trans())
+  
+  print(g)
+  print(paste(i,&quot;out of&quot;,max(df_tween_appear$.frame)))
+  ani.pause()
+}
+},movie.name=&quot;animition.gif&quot;, width = 4, height = 5)
+</code></pre>
+
+<p><img alt = 'animation' width='200' src='/post/2018-10-20-animated-scribbles-animated_files/fei_anim_low_res.gif' /></p>
+
+<p>And as you can see in the end, the animation works pretty well!</p>
+
+<p>Of course with a bigger resolution and more frames the animation looks smoother and you will see the individual lines scribbled on more clearly. But this can take a looong time. I tried to include the random alpha level for each line. But this didn&rsquo;t seem to work. I also tried to rewrite the animation in the new <code>gganimate</code> syntax, but i couldn&rsquo;t get it to work properly. The <code>geom_path</code> will always connect the first point with the last point directly in combination with the <code>transition_reveal</code> command for example. Maybe someone else has an idea how to fix this?</p>
+
+<p>In the end this was a fun animation to work on and with an awesome result!</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+

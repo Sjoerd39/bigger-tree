@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scribbles on BiggeR-tRee</title>
+    <link>/tags/scribbles/</link>
+    <description>Recent content in Scribbles on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/scribbles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Animated scribbles</title>
+      <link>/2018/11/20/animated-scribbles/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/20/animated-scribbles/</guid>
+      <description>Yes! Another animation! I saw the post of Antonio Sánchez Chinchón about his &amp;lsquo;frankenstein scribble&amp;rsquo; (Link to his blogpost) and immediatly thought this would like very nice when animated. Antonio uses the Travelling Salesman Problem and the TSP package to make a scribble based on a picture. The Basics from Antonio&amp;rsquo;s code stay the same. So, let&amp;rsquo;s see how to animate it!
+library(tidyverse) library(imager) library(scales) library(TSP) library(gganimate) library(tweenr) library(animation)  Instead of Frankenstein, let&amp;rsquo;s use this picture of my girlfriend this time.</description>
+    </item>
+    
+  </channel>
+</rss>
