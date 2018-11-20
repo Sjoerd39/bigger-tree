@@ -22,6 +22,8 @@ This website is made with [**R/ Rstudio**](https://www.rstudio.com/), the [**blo
 
 <br></br>
 
-Disclaimer: The name of the website is a (poor) translation of my lastname. There won't be many trees on this blog.
+For questions or remarks, please <a href="mailto:sjoerddikkerboom@gmail.com?subject=BiggeR-Tree%20question">email me</a>.
+
+Disclaimer: The name of the website is a (poor) translation of my last name. There won't be many trees on this blog.
 
 <br></br>
