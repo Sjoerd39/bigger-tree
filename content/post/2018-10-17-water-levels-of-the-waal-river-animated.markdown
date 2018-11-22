@@ -18,24 +18,23 @@ Inspired by the dry weather of the last couple of months in the Neterlands, the 
 
 Data of water levels in the Netherlands are available through: https://waterinfo.rws.nl/#!/nav/index/ (in dutch)
 
-```{r include=FALSE}
-knitr::opts_chunk$set(message=FALSE, warning=FALSE)
-```
+
 loading packages:
-```{r library}
+
+```r
 # devtools::install_github('thomasp85/gganimate')
 # devtools::install_github("thomasp85/transformr")
 library(tidyverse)
 library(janitor)
 library(lubridate)
 library(gganimate)
-
 ```
 
 
 I manually gathered some metadata of the measuring stations:
 
-```{r metadata}
+
+```r
 pointinfo <- data.frame(station = c("Dordrecht", "Hoek van Holland",	
                                     "Lobith",	"Nijmegen haven",	
                                     "Tiel Waal",	"Vlaardingen",	"Vuren"),
@@ -47,24 +46,11 @@ pointinfo <- data.frame(station = c("Dordrecht", "Hoek van Holland",
 
 Then its reading and preparing the data for the plot. Adding metadata. The measurements are aggregated to weekly avarages.
 
-```{r onderwater, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-df_waterlevels <- read.csv2("C:/Users/Administrator/Desktop/Projects/2018/waterlevels/wl.csv", stringsAsFactors = F) %>% 
-  clean_names() %>% 
-  mutate(dy = as.Date(waarnemingdatum, "%d-%m-%Y"),
-         weeknr = week(dy),
-         yr = year(dy),
-         ## replace 999999999 with NA.
-         waterlevel = replace(numeriekewaarde, which(numeriekewaarde == 999999999), NA)) %>% 
-  rename(station = meetpunt_identificatie) %>% 
-  filter(!is.na(station)) %>% 
-  select(waterlevel, station, yr, weeknr) %>%
-  group_by(yr, weeknr, station) %>% 
-  summarise(waterlevel_weekmean = mean(waterlevel, na.rm = TRUE)) %>% 
-  left_join(pointinfo, by = "station")
-```
 
 
-```{r waterlevel_data, eval=FALSE}
+
+
+```r
 ## cm in reference to N.A.P. week avarages
 df_waterlevels <- read.csv2("wl.csv", stringsAsFactors = F) %>% 
   clean_names() %>% 
@@ -83,17 +69,21 @@ df_waterlevels <- read.csv2("wl.csv", stringsAsFactors = F) %>%
 
 When we plot the data for the first week in 2018 we see that the avarage water level differs more then 1200 centimeter (or 12 meters) over ~160 kilometer. Between the mouth of the river near the sea (at 0 kilometer) and where the river enters the Netherlands.
 
-```{r plot, fig.width = 4, fig.height = 3}
+
+```r
 df_waterlevels %>% 
   filter(yr == 2018, weeknr == 1) %>% 
   ggplot()+
   geom_line(aes(x = km, y = waterlevel_weekmean))
 ```
 
+<img src="/post/2018-10-17-water-levels-of-the-waal-river-animated_files/figure-html/plot-1.png" width="384" />
+
 To get a more meaningful and clearer look at the lower water levels of 2018, lets see the difference with the weekly averages of 2017 over the course of the year. First adding the difference of weekly averages between the years to the data. Then Selecting only the weekly averages for 2018.
 
 
-```{r adding_differences}
+
+```r
 df_waterlevels <- df_waterlevels %>% 
   filter(yr == 2017) %>% 
   group_by(station, weeknr) %>% 
@@ -110,7 +100,8 @@ df_waterlevels_2018 <- df_waterlevels %>%
 
 Then animate with the new `gganimate` syntax: 
 
-```{r animating, fig.show='animate', ffmpeg.format='gif', dev='jpeg', fig.width = 7, fig.height = 5}
+
+```r
 a <- ggplot() +
   geom_line(data = df_waterlevels_2018, aes(x = km, y = 0), col = "orangered") +
   geom_line(data = df_waterlevels_2018, aes(x = km, y = waterlevel_diff), col = "cyan3", size = 2) +
@@ -134,8 +125,10 @@ a <- ggplot() +
 
 ## with the explicite animate call there are more animation options available
 animate(a, nframes = 400, width = 800, height = 600)
-
 ```
+
+
+![](/post/2018-10-17-water-levels-of-the-waal-river-animated_files/waterlevels.gif)
 
 Now we can see that from week ~30 and later the water level drops clearly below the red line. This means that the average water level in those weeks in 2018 are significantly lower than in the same weeks in 2017. The difference is even around 200 cm (2 meters) for the stations near Lobith, Nijmegen and Tiel!
 

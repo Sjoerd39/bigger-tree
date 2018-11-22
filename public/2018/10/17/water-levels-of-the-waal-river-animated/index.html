@@ -85,24 +85,33 @@ ga('send', 'pageview');
     
 
     <div class="article-content">
-      <p>Inspired by the dry weather of the last couple of months in the Neterlands, the overhaul of the gganimate package and examples like on this blog: <a href="https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html" class="uri">https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html</a> i wanted to see how low the water levels really are. And ofcourse to animate the visuals!</p>
-<p>Data of water levels in the Netherlands are available through: <a href="https://waterinfo.rws.nl/#!/nav/index/" class="uri">https://waterinfo.rws.nl/#!/nav/index/</a> (in dutch)</p>
+      <p>Inspired by the dry weather of the last couple of months in the Neterlands, the overhaul of the gganimate package and examples like on this blog: <a href="https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html">https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html</a> i wanted to see how low the water levels really are. And ofcourse to animate the visuals!</p>
+
+<p>Data of water levels in the Netherlands are available through: <a href="https://waterinfo.rws.nl/#!/nav/index/">https://waterinfo.rws.nl/#!/nav/index/</a> (in dutch)</p>
+
 <p>loading packages:</p>
-<pre class="r"><code># devtools::install_github(&#39;thomasp85/gganimate&#39;)
+
+<pre><code class="language-r"># devtools::install_github('thomasp85/gganimate')
 # devtools::install_github(&quot;thomasp85/transformr&quot;)
 library(tidyverse)
 library(janitor)
 library(lubridate)
-library(gganimate)</code></pre>
+library(gganimate)
+</code></pre>
+
 <p>I manually gathered some metadata of the measuring stations:</p>
-<pre class="r"><code>pointinfo &lt;- data.frame(station = c(&quot;Dordrecht&quot;, &quot;Hoek van Holland&quot;,    
+
+<pre><code class="language-r">pointinfo &lt;- data.frame(station = c(&quot;Dordrecht&quot;, &quot;Hoek van Holland&quot;,    
                                     &quot;Lobith&quot;,   &quot;Nijmegen haven&quot;,   
                                     &quot;Tiel Waal&quot;,    &quot;Vlaardingen&quot;,  &quot;Vuren&quot;),
                         km = c(53,  2,  165,    141,    114,    21, 79),
                         river = c( &quot;beneden merwede&quot;, &quot;nieuwe waterweg&quot;,    
-                                   &quot;rijn&quot;,  &quot;waal&quot;, &quot;waal&quot;, &quot;nieuwe maas&quot;,  &quot;waal&quot;))</code></pre>
+                                   &quot;rijn&quot;,  &quot;waal&quot;, &quot;waal&quot;, &quot;nieuwe maas&quot;,  &quot;waal&quot;))
+</code></pre>
+
 <p>Then its reading and preparing the data for the plot. Adding metadata. The measurements are aggregated to weekly avarages.</p>
-<pre class="r"><code>## cm in reference to N.A.P. week avarages
+
+<pre><code class="language-r">## cm in reference to N.A.P. week avarages
 df_waterlevels &lt;- read.csv2(&quot;wl.csv&quot;, stringsAsFactors = F) %&gt;% 
   clean_names() %&gt;% 
   mutate(dy = as.Date(waarnemingdatum, &quot;%d-%m-%Y&quot;),
@@ -115,15 +124,22 @@ df_waterlevels &lt;- read.csv2(&quot;wl.csv&quot;, stringsAsFactors = F) %&gt;%
   select(waterlevel, station, yr, weeknr) %&gt;%
   group_by(yr, weeknr, station) %&gt;% 
   summarise(waterlevel_weekmean = mean(waterlevel, na.rm = TRUE)) %&gt;% 
-  left_join(pointinfo, by = &quot;station&quot;)</code></pre>
+  left_join(pointinfo, by = &quot;station&quot;)
+</code></pre>
+
 <p>When we plot the data for the first week in 2018 we see that the avarage water level differs more then 1200 centimeter (or 12 meters) over ~160 kilometer. Between the mouth of the river near the sea (at 0 kilometer) and where the river enters the Netherlands.</p>
-<pre class="r"><code>df_waterlevels %&gt;% 
+
+<pre><code class="language-r">df_waterlevels %&gt;% 
   filter(yr == 2018, weeknr == 1) %&gt;% 
   ggplot()+
-  geom_line(aes(x = km, y = waterlevel_weekmean))</code></pre>
+  geom_line(aes(x = km, y = waterlevel_weekmean))
+</code></pre>
+
 <p><img src="/post/2018-10-17-water-levels-of-the-waal-river-animated_files/figure-html/plot-1.png" width="384" /></p>
+
 <p>To get a more meaningful and clearer look at the lower water levels of 2018, lets see the difference with the weekly averages of 2017 over the course of the year. First adding the difference of weekly averages between the years to the data. Then Selecting only the weekly averages for 2018.</p>
-<pre class="r"><code>df_waterlevels &lt;- df_waterlevels %&gt;% 
+
+<pre><code class="language-r">df_waterlevels &lt;- df_waterlevels %&gt;% 
   filter(yr == 2017) %&gt;% 
   group_by(station, weeknr) %&gt;% 
   summarise(waterlevel_wk2017mean = mean(waterlevel_weekmean, na.rm = TRUE)) %&gt;% 
@@ -133,9 +149,12 @@ df_waterlevels &lt;- read.csv2(&quot;wl.csv&quot;, stringsAsFactors = F) %&gt;%
   filter(!is.na(waterlevel_diff))
 
 df_waterlevels_2018 &lt;- df_waterlevels %&gt;% 
-  filter(yr == 2018)</code></pre>
+  filter(yr == 2018)
+</code></pre>
+
 <p>Then animate with the new <code>gganimate</code> syntax:</p>
-<pre class="r"><code>a &lt;- ggplot() +
+
+<pre><code class="language-r">a &lt;- ggplot() +
   geom_line(data = df_waterlevels_2018, aes(x = km, y = 0), col = &quot;orangered&quot;) +
   geom_line(data = df_waterlevels_2018, aes(x = km, y = waterlevel_diff), col = &quot;cyan3&quot;, size = 2) +
   geom_label(aes(x = 2, y = 140, label = &quot;difference in weekly avarage waterlevel of 2018&quot;), 
@@ -157,11 +176,17 @@ df_waterlevels_2018 &lt;- df_waterlevels %&gt;%
   ease_aes(&quot;sine-in-out&quot;)
 
 ## with the explicite animate call there are more animation options available
-animate(a, nframes = 400, width = 800, height = 600)</code></pre>
-<p><img src="/post/2018-10-17-water-levels-of-the-waal-river-animated_files/figure-html/animating.gif" /><!-- --></p>
+animate(a, nframes = 400, width = 800, height = 600)
+</code></pre>
+
+<p><img src="/post/2018-10-17-water-levels-of-the-waal-river-animated_files/waterlevels.gif" alt="" /></p>
+
 <p>Now we can see that from week ~30 and later the water level drops clearly below the red line. This means that the average water level in those weeks in 2018 are significantly lower than in the same weeks in 2017. The difference is even around 200 cm (2 meters) for the stations near Lobith, Nijmegen and Tiel!</p>
+
 <p><br></br></p>
+
 <p>Making animations with the new syntax is a lot easier than before. A lot of the manual data manipulation is now integrated within the functions of the package. Plus its easy to add the animation directly to a plot.</p>
+
 <p>I will probably make more posts about animations in <code>R</code> with <code>gganimate</code> in the future. There are some (almost) finished projects I made with earlier versions of <code>gganimate</code> I still hope to write about =).</p>
 
     </div>

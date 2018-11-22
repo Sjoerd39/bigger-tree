@@ -25,12 +25,11 @@ This is exactly the quick and fun exercise i need to start my blog. And i think 
 First we need some data. Let's use the same list as in the video (source: https://github.com/dwyl/english-words):
 
 
-```{r include=FALSE}
-knitr::opts_chunk$set(message=FALSE, warning=FALSE)
-```
 
 
-```{r data}
+
+
+```r
 library(tidyverse)
 words <- read.delim("https://raw.githubusercontent.com/dwyl/english-words/master/words.txt", 
                     stringsAsFactors = FALSE)
@@ -44,7 +43,8 @@ Now we have a list of 466543 words!
 Let's see what the longest words are. We will stick to the same limitations as in the video. So we will filter out words with the letters g, k, m, q, v, w, x and z. With the help of Tidyverse, this code chunk is only 4 lines long:
 
 
-```{r code}
+
+```r
 length_words <- words %>% 
   filter(!grepl("[gkmqvwxzGKMQVWXZ]", X2)) %>% 
   mutate(length = nchar(X2)) %>% 
@@ -55,8 +55,23 @@ In the second line we filter for words with the letters that are not allowed. Wi
 
 Now let's see the result:
 
-```{r result}
+
+```r
 head(length_words, 10)
+```
+
+```
+##                                 X2 length
+## 1  dichlorodiphenyltrichloroethane     31
+## 2         bras-dessus-bras-dessous     24
+## 3         pseudointernationalistic     24
+## 4         scientificophilosophical     24
+## 5         tetraiodophenolphthalein     24
+## 6          analytico-architectural     23
+## 7          chlorotrifluoroethylene     23
+## 8          electro-ultrafiltration     23
+## 9          phenolsulphonephthalein     23
+## 10         polytetrafluoroethylene     23
 ```
 
 

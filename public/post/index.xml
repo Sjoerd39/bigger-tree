@@ -40,7 +40,7 @@ library(tidyverse) library(zoo) library(readxl) library(lubridate) library(magri
       <description>Inspired by the dry weather of the last couple of months in the Neterlands, the overhaul of the gganimate package and examples like on this blog: https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html i wanted to see how low the water levels really are. And ofcourse to animate the visuals!
 Data of water levels in the Netherlands are available through: https://waterinfo.rws.nl/#!/nav/index/ (in dutch)
 loading packages:
-# devtools::install_github(&amp;#39;thomasp85/gganimate&amp;#39;)# devtools::install_github(&amp;quot;thomasp85/transformr&amp;quot;)library(tidyverse)library(janitor)library(lubridate)library(gganimate)I manually gathered some metadata of the measuring stations:</description>
+# devtools::install_github(&#39;thomasp85/gganimate&#39;) # devtools::install_github(&amp;quot;thomasp85/transformr&amp;quot;) library(tidyverse) library(janitor) library(lubridate) library(gganimate)  I manually gathered some metadata of the measuring stations:</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ loading packages:
       
       <guid>/2018/10/09/long-words-with-seven-segment-displays/</guid>
       <description>One of the most entertaining things you could do at primary school was spelling words with the seven-segment calculator. A little while ago Tom Scott did a video about seven-segment displays. You can see it here:
-
+ 
  This is exactly the quick and fun exercise i need to start my blog. And i think R (plus some packages) is especially suited for this task. So, what are the longest words we can make with the limitations of a seven-segment display?</description>
     </item>
     

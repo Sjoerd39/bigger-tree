@@ -20,7 +20,7 @@
       <description>Inspired by the dry weather of the last couple of months in the Neterlands, the overhaul of the gganimate package and examples like on this blog: https://adventuresindata.blogspot.com/2018/10/animated-river-flow-revisited.html i wanted to see how low the water levels really are. And ofcourse to animate the visuals!
 Data of water levels in the Netherlands are available through: https://waterinfo.rws.nl/#!/nav/index/ (in dutch)
 loading packages:
-# devtools::install_github(&amp;#39;thomasp85/gganimate&amp;#39;)# devtools::install_github(&amp;quot;thomasp85/transformr&amp;quot;)library(tidyverse)library(janitor)library(lubridate)library(gganimate)I manually gathered some metadata of the measuring stations:</description>
+# devtools::install_github(&#39;thomasp85/gganimate&#39;) # devtools::install_github(&amp;quot;thomasp85/transformr&amp;quot;) library(tidyverse) library(janitor) library(lubridate) library(gganimate)  I manually gathered some metadata of the measuring stations:</description>
     </item>
     
   </channel>

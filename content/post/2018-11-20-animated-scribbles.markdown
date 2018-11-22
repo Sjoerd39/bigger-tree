@@ -42,7 +42,7 @@ file <- "picture.jpg"
 <img alt = 'picture' width='200' src='/post/2018-10-20-animated-scribbles-animated_files/fei.jpg' />
 
 
-Like the code before the pictures is converted to a gray scale picture and then to a matrix of data points we can use for the TSP algorithm.
+The pictures is converted to a gray scale picture and then to a matrix of data points we can use for the TSP algorithm.
 
 
 

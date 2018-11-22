@@ -38,7 +38,7 @@ library(tidyverse) library(zoo) library(readxl) library(lubridate) library(magri
       
       <guid>/2018/10/09/long-words-with-seven-segment-displays/</guid>
       <description>One of the most entertaining things you could do at primary school was spelling words with the seven-segment calculator. A little while ago Tom Scott did a video about seven-segment displays. You can see it here:
-
+ 
  This is exactly the quick and fun exercise i need to start my blog. And i think R (plus some packages) is especially suited for this task. So, what are the longest words we can make with the limitations of a seven-segment display?</description>
     </item>
     

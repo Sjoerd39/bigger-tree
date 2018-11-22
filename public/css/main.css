@@ -33,6 +33,12 @@ code {
 	padding: 6px;
 }
 
+.language-r{
+display: block;
+overflow-x:scroll;
+max-width: 1000px
+}
+
 .wrapper {
   overflow: hidden;
   position: relative;

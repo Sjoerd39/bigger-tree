@@ -20,9 +20,10 @@ And this is me =) :
 
 This website is made with [**R/ Rstudio**](https://www.rstudio.com/), the [**blogdown**](https://github.com/rstudio/blogdown) package, [**Hugo**](https://gohugo.io/) and adapted from the [**Lithium theme**](https://github.com/yihui/hugo-lithium). 
 
+For questions or remarks, please <a href="mailto:sjoerddikkerboom@gmail.com?subject=BiggeR-Tree%20question">email me</a>.
+
 <br></br>
 
-For questions or remarks, please <a href="mailto:sjoerddikkerboom@gmail.com?subject=BiggeR-Tree%20question">email me</a>.
 
 Disclaimer: The name of the website is a (poor) translation of my last name. There won't be many trees on this blog.
 
