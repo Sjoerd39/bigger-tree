@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>streaming sensor data - BiggeR-tRee</title>
+<meta property="og:title" content="streaming sensor data - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">streaming sensor data</h1>
+
+    
+    <span class="article-date">2018/12/17</span>
+    
+
+    <div class="article-content">
+      <p>At the municipality i work at we increasingly want to anlyse and publish real time data. As probably every organization =). This is a small practice project where i want to gather live data. Analyze it. And present it in a live, self-updating dashboard.</p>
+
+<p>The data i gather is from sensors placed in the city of Nijmegen for the <a href="http://smartemission.ruhosting.nl/visitors/" target="_blank">Smart Emissions project</a>. Citizens of Nijmegen and the municipality placed several cheap sensors around town to measure temperatures, content of the air (PM 2,5, NO2 etc.) and sometimes even sound. They provide several API&rsquo;s to access the data.</p>
+
+<p>The dashboard I made is presenting the measurements of sensor &lsquo;20080007&rsquo; of the last 12 hours. Plus it presents a forecast of the next 6 hours based on the last 1000 measurements. It tries to update itself every 5 minutes. It might take a minute to load.</p>
+
+<iframe width="860" height="400" src="https://sjoerd.shinyapps.io/temp_app/"></iframe>
+
+<p>Below is the script for making this simple dashboard.</p>
+
+<pre><code class="language-r">library(shiny)
+library(jsonlite)
+library(tidyverse)
+library(shiny)
+library(forecast)
+library(tseries)
+library(janitor)
+
+
+url &lt;- &quot;https://data.smartemission.nl/gost/v1.0/Things?$filter=name%20eq%20%2720080007%27&amp;$expand=Datastreams/Observations($top=1000)&quot;
+
+
+ui &lt;- shinyServer(fluidPage(
+  plotOutput(&quot;plot_temp&quot;)
+))
+
+
+server &lt;- shinyServer(function(input, output, session){
+  # Function to get new observations
+  get_temp &lt;- function(){
+    ## update every 2 mins
+    tmp &lt;- fromJSON(url, flatten = TRUE)
+    
+    df &lt;- tmp$value$Datastreams[[1]]$Observations[[5]] %&gt;% 
+      clean_names() %&gt;% 
+      mutate(date_result = as.Date(substr(max(as.Date(result_time)), 1, 10)),
+             time = substr(result_time, 12, 19))
+    
+    Sys.sleep(0.1) #ensures API results are returned successfully
+    
+    df
+  }
+  
+  output$plot_temp &lt;- renderPlot({
+    
+    ## make this function to update itself every 300000 ms, or 5 mins
+    invalidateLater(300000, session)
+    
+    # Initialize df
+    df &lt;- get_temp()
+    
+    ## get times for forecast
+    last_obs &lt;- df %&gt;% 
+      select(time) %&gt;% 
+      head(1)
+    
+    times &lt;- seq(as.POSIXct(last_obs$time, format = &quot;%H:%M:%S&quot;) + 3600, length.out = 6,  by = &quot;hour&quot;)
+    
+    ## making a timeseries for forecasting
+    ts &lt;- df %&gt;% 
+      arrange(result_time) %&gt;% 
+      select(result) %&gt;% 
+      ts(frequency = 24)
+    
+    ## forecasting with auto.arima
+    fit &lt;- auto.arima(ts)
+    
+    fc &lt;- as.data.frame(forecast(fit, h = 6)) %&gt;% 
+      ## add times for plotting later
+      bind_cols(time = times) %&gt;% 
+      mutate(time = strftime(time, format = &quot;%H:%M:%S&quot;)) %&gt;% 
+      rename(pt_fc = `Point Forecast`) %&gt;% 
+      select(time, pt_fc)
+    
+    ## make the 24h of a day for plotting later
+    h24 &lt;- strftime(seq(as.POSIXct(&quot;00:00:00&quot;, format = &quot;%H:%M:%S&quot;) , length.out = 24,  by = &quot;hour&quot;), format = &quot;%H:%M:%S&quot;)
+    
+    date_title &lt;- df[[1,14]]
+    
+    # Plot the 12 most recent values
+    df %&gt;% 
+      head(12) %&gt;%
+      mutate(type = &quot;Temperature measurements&quot;) %&gt;% 
+      ## add forecast points to data
+      bind_rows(fc) %&gt;%
+      ## add 24h times for better plotting
+      full_join(data.frame(time = h24)) %&gt;%
+      ## format time to better fit the plot
+      mutate(time = format(as.POSIXct(time, format = &quot;%H:%M:%S&quot;), &quot;%H:%M&quot;)) %&gt;% 
+      ## start the plot
+      ggplot() +
+      # add measurements
+      geom_line(aes(x = time, y = result, group =  1, linetype = &quot;Temperature measurements&quot;), colour = &quot;orangered1&quot;, size = 2) +
+      # add forecast
+      geom_point(aes(x = time, y = pt_fc, shape = &quot;Forecast&quot;), colour = &quot;steelblue1&quot;, size = 6) +  
+      xlab(&quot; &quot;) +
+      ylab(&quot;Temperature&quot;) +
+      ggtitle(label = paste0(&quot;Temperature for station with id '20080007' on &quot;, date_title, &quot;. Will try to update every 5 minutes.&quot;)) +
+      theme(legend.title=element_blank())
+
+    
+   
+  })
+})
+
+shinyApp(ui=ui,server=server)
+</code></pre>
+
+<p>I&rsquo;m sure there is some tweaking possible to make it faster or better. For me it was a good practice to work with continues, streaming data. And to work with Shiny again. It also opens a lot possibilities for fun future projects =).</p>
+
+<p>One thing I&rsquo;ll definitely look at is to also make models independent of long time series. And let the last few measurements update the model in small increments. It will be a lot faster. Have fun with your own streaming data and let me know of your own ideas!</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+

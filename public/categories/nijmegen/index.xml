@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nijmegen on BiggeR-tRee</title>
+    <link>/categories/nijmegen/</link>
+    <description>Recent content in Nijmegen on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/nijmegen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>streaming sensor data</title>
+      <link>/2018/12/17/streaming-sensor-data/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/12/17/streaming-sensor-data/</guid>
+      <description>At the municipality i work at we increasingly want to anlyse and publish real time data. As probably every organization =). This is a small practice project where i want to gather live data. Analyze it. And present it in a live, self-updating dashboard.
+The data i gather is from sensors placed in the city of Nijmegen for the Smart Emissions project. Citizens of Nijmegen and the municipality placed several cheap sensors around town to measure temperatures, content of the air (PM 2,5, NO2 etc.</description>
+    </item>
+    
+  </channel>
+</rss>

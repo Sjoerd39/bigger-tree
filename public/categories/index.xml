@@ -30,6 +30,24 @@
     </item>
     
     <item>
+      <title>Api</title>
+      <link>/categories/api/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forecast</title>
+      <link>/categories/forecast/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/forecast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gganimate</title>
       <link>/categories/gganimate/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
@@ -39,9 +57,18 @@
     </item>
     
     <item>
+      <title>Nijmegen</title>
+      <link>/categories/nijmegen/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/nijmegen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
@@ -66,6 +93,15 @@
     </item>
     
     <item>
+      <title>Sensor</title>
+      <link>/categories/sensor/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/sensor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Seven Segment Displays</title>
       <link>/categories/seven-segment-displays/</link>
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
@@ -75,11 +111,38 @@
     </item>
     
     <item>
+      <title>Smart Emission</title>
+      <link>/categories/smart-emission/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/smart-emission/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Streaming Data</title>
+      <link>/categories/streaming-data/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/streaming-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Strings</title>
       <link>/categories/strings/</link>
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/strings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Temperature</title>
+      <link>/categories/temperature/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/temperature/</guid>
       <description></description>
     </item>
     
