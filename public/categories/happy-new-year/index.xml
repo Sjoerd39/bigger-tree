@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Happy New Year on BiggeR-tRee</title>
+    <link>/categories/happy-new-year/</link>
+    <description>Recent content in Happy New Year on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/happy-new-year/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R fireworks!</title>
+      <link>/2018/12/22/r-fireworks/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/12/22/r-fireworks/</guid>
+      <description>Happy holidays! Happy new year! As a last project and seasonal greetings I wanted to simulate fireworks within R With gganimate. And it really worked! See the awesome result:
+
+
+Basically the code generates a lot of points and gets different samples. It&amp;rsquo;s then using the Kmeans algorithm to get the clusters of points and with that the colors. The amount of clusters is randomized between 1 and 10. This is repeated a couple of times.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>R fireworks! - BiggeR-tRee</title>
+<meta property="og:title" content="R fireworks! - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">R fireworks!</h1>
+
+    
+    <span class="article-date">2018/12/22</span>
+    
+
+    <div class="article-content">
+      <p>Happy holidays! Happy new year! As a last project and seasonal greetings I wanted to simulate fireworks within R With <code>gganimate</code>. And it really worked! See the awesome result:</p>
+
+<p><img src="/post/2018-12-22-R-fireworks!/fireworks.gif" alt="" /></p>
+
+<p><br></br></p>
+
+<p>Basically the code generates a lot of points and gets different samples. It&rsquo;s then using the Kmeans algorithm to get the clusters of points and with that the colors. The amount of clusters is randomized between 1 and 10. This is repeated a couple of times. And these repetitions are also the different times for <code>transition_time</code>. I added a bit of randomness between the clusters within the times. So the fireworks go off staggered within each time section.</p>
+
+<p>It&rsquo;s fun project and there are still a couple of ways to enhance this animation. One thing I wanted to add were drawing the lines from the center to the end points. I tried <code>transition_reveal</code> with <code>geom_line</code>. The animation covered only half of the lines each cluster. So maybe someone else can make that work. Another thing is the beginning and end of the animation are a bit awkward. The beginning always seem to shoot all the fireworks for that time frame at once and the end seems to cut off the last few animations.</p>
+
+<p>Here is the code to make your own fireworks. Have fun! Happy new year!</p>
+
+<pre><code class="language-r">library(tidyverse)
+library(gganimate)
+
+# make a df
+df &lt;- data.frame(x = runif(100000),
+                 y= runif(100000))
+
+## get the outer limits for the plot
+xmax &lt;- max(df$x)
+xmin &lt;- min(df$x)
+ymax &lt;- max(df$y)
+ymin &lt;- min(df$y)
+
+
+## make a loop for n firework displays. Is that the term?
+fireworks &lt;- list()
+mean_t &lt;- 1
+begin_gr &lt;- 400
+
+for (i in 1:20){
+
+  mean_t &lt;- mean_t + 2
+  
+  ## random amount of clusters 1 - 10 
+  nclust &lt;- runif(1, min = 1, max = 10)
+  
+  ## random time for fireworks + some wait time from last display
+  
+  t &lt;- data_frame(t = round(rnorm(n = nclust, mean = mean_t, sd = 0.3), 1),
+                    cl = 1:nclust)
+
+  df_s &lt;- data.frame(x = sample(df$x, 150),
+                     y = sample(df$y, 150))
+  
+  
+  ## all points to diferent groups for the animation
+  begin_gr &lt;- begin_gr + nrow(df_s) + 1
+  end_gr &lt;- begin_gr + nrow(df_s) - 1
+  
+  
+  
+  km &lt;- kmeans(df_s, nclust, iter.max = 50)
+  
+  cluster_info &lt;- data.frame(cl = km$cluster)
+  
+  fw  &lt;-  df_s %&gt;% 
+    bind_cols(cluster_info) %&gt;% 
+    arrange(cl) %&gt;% 
+    mutate(gr = begin_gr:end_gr)
+  
+  df_cl &lt;- fw %&gt;% 
+    group_by(cl) %&gt;% 
+    summarise(nr = n())
+  
+  ntimes &lt;- df_cl$nr
+  
+  ## starting position from centroids of the clusters
+  centre_fw &lt;- data.frame(x = rep(km$centers[,1], ntimes),
+                          y = rep(km$centers[,2], ntimes),
+                          cl = rep(1:nrow(km$centers), ntimes),
+                          gr = begin_gr:end_gr)
+  
+  fireworks[[i]] &lt;- fw %&gt;% 
+    left_join(t, by = &quot;cl&quot;) %&gt;% 
+    ## add starting position with t - 0.5
+    bind_rows(centre_fw %&gt;% left_join(t, by = &quot;cl&quot;) %&gt;% mutate(t = t-0.5)) %&gt;%
+    mutate(cl = as.factor(cl))
+}
+
+fireworks &lt;- bind_rows(fireworks)
+
+
+ani &lt;-fireworks %&gt;% 
+  ggplot(aes(x = x, y = y)) + 
+  geom_point(data = fireworks %&gt;% filter(cl == 1), aes(group = gr, col = cl), size = 2) +
+  geom_point(data = fireworks %&gt;% filter(cl == 2), aes(group = gr, col = cl), size = 2) +
+  geom_point(data = fireworks %&gt;% filter(cl == 3), aes(group = gr, col = cl), size = 2) +
+  geom_point(data = fireworks %&gt;% filter(cl == 4), aes(group = gr, col = cl), size = 2) +
+  geom_point(data = fireworks %&gt;% filter(cl == 5), aes(group = gr, col = cl), size = 2) +
+  ## turn of everything manually, theme_void() won't cooperate with my happy holidays msg
+  xlab( &quot;Happy holidays and an awesome new year!&quot;) +
+  theme(axis.line = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position = &quot;none&quot;,
+        panel.background = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.background = element_blank(),
+        axis.title.x = element_text(face = &quot;bold&quot;, colour = &quot;orangered2&quot;, size = 18)) +
+  scale_x_continuous(limits = c(xmin, xmax)) +
+  scale_y_continuous(limits = c(ymin, ymax)) +
+  ## gganimate options
+  transition_time(t) +
+  ease_aes(&quot;quadratic-out&quot;) +
+  exit_fade()
+
+animate(ani, nframes = 700)
+anim_save(&quot;fireworks.gif&quot;)
+</code></pre>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+
