@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>Speech generator - BiggeR-tRee</title>
+<meta property="og:title" content="Speech generator - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Speech generator</h1>
+
+    
+    <span class="article-date">2019/01/24</span>
+    
+
+    <div class="article-content">
+      <p>I was asked to introduce an Artificial Intelligence workshop for government employees (colleagues). I thought i could do that through an (AI) speech generator. So I made one. Incorporating some Language Processing techniques I recently worked with.</p>
+
+<p>The generator contains the content of 45 speeches in Enlish, mainly of English and American statesman. The sentences are cleaned (minimally) and separated. Checked for their sentiment (positive or negative). In the app you can choose the overall sentiment of the speech and add your own welcoming and closing messages. Choose the number of lines. Press the button and voila! The App generates the speech for you (use at your own risk ;) ).</p>
+
+<iframe width="860" height="520" src="https://sjoerd.shinyapps.io/speechapp/"></iframe>
+
+<p>At the point of writing this post, i didn&rsquo;t do the introduction yet. I&rsquo;m still debating if I&rsquo;ll use the speech generator for it =).</p>
+
+<p>The sentiment analysis was done through the <code>pattern.nlp</code> package, that uses python in the background. After I wrote this app I discovered <code>udpipe</code>. It&rsquo;s an easier package to use. I liked working with <code>pattern.nlp</code>, but I probably will use <code>udpipe</code> in the future.</p>
+
+<p>The speeches were collected into an excel sheet. Email me if you would like the data. The preparation of the data happens offline before the app is deployed. So there are two parts to the code:</p>
+
+<pre><code class="language-r">library(tidyverse)
+library(readxl)
+library(tokenizers)
+library(pattern.nlp)
+
+df &lt;- read_xlsx(&quot;speech.xlsx&quot;) 
+
+list &lt;- df$speech
+
+## make seperate sentences from all the speeches (this is not perfect)
+sentences &lt;- lapply(list, tokenize_sentences)
+
+## make a dataframe with the seperate sentences and a identifier (speaker + date)
+## mainly because the above lapply makes a nested list (can be improved).
+sp_list &lt;- list()
+
+for (i in 1:length(sentences)) {
+  
+  jj &lt;- length(sentences[[i]][[1]])
+  ll &lt;- list()
+  
+  for (j in 1:jj) {
+  ll[[j]] &lt;- sentences[[i]][[1]][[j]]
+  }
+  
+  sp_list[[i]] &lt;- data.frame(sp_sc = matrix(unlist(ll)),
+                             speaker_date = paste0(df$speaker[[i]], &quot;_&quot;, df$date[[i]]))
+}
+
+
+df_speech &lt;- bind_rows(sp_list)
+
+## make a list of all the sentences, and loop it through the sentiment function
+sentences &lt;- df_speech$sp_sc
+sent &lt;- list()
+
+for (i in 1:length(sentences)) {
+  s &lt;- pattern_sentiment(sentences[[i]], language = &quot;english&quot;)
+  sent[[i]] &lt;- s
+}
+
+speech_pool &lt;- bind_rows(sent) %&gt;% 
+  bind_cols(df_speech) %&gt;% 
+  ## do -some- cleaning
+  filter(!str_detect(id, &quot;thank|Thank&quot;)) %&gt;% 
+  filter(!str_detect(id, &quot;president|President&quot;)) %&gt;% 
+  filter(nchar(id) &gt; 25)
+
+# write file for app
+# write_rds(speech_pool, &quot;speechaiapp/speech_pool.rds&quot;)
+</code></pre>
+
+<p>Code for the shiny app:</p>
+
+<pre><code class="language-r">library(shiny)
+library(tidyverse)
+
+speech_pool &lt;- read_rds(&quot;speech_pool.rds&quot;) 
+speech_pool &lt;- speech_pool %&gt;% 
+  mutate(pool = &quot;all&quot;) %&gt;% 
+  bind_rows(speech_pool %&gt;% filter(polarity &gt; 0.1) %&gt;% mutate(pool = &quot;pos&quot;)) %&gt;% 
+  bind_rows(speech_pool %&gt;% filter(polarity &lt; -0.1) %&gt;% mutate(pool = &quot;neg&quot;))
+
+# Define UI for application
+ui &lt;- fluidPage(
+   # Application title
+   titlePanel(&quot;Speech generator&quot;),
+   
+   # Sidebar with a slider input for number sentences
+   sidebarLayout(
+      sidebarPanel(
+         sliderInput(&quot;lines&quot;,
+                     &quot;Number of sentences:&quot;,
+                     min = 2,
+                     max = 20,
+                     value = 5),
+         # Radiobuttons for sentiment
+         radioButtons(&quot;pos_neg&quot;, &quot;Sentiment of the speech:&quot;,
+                      choices = c(&quot;Positive&quot; = &quot;pos&quot;,
+                                  &quot;Negative&quot; = &quot;neg&quot;,
+                                  &quot;Doesn't matter&quot; = &quot;all&quot;),
+                      selected = &quot;pos&quot;),
+         # welcome message and closing remarks
+         textInput(&quot;welcome&quot;, &quot;Welcoming message:&quot;, &quot;Hello friends,&quot;),
+         textInput(&quot;close&quot;, &quot;Closing remark:&quot;, &quot;Thank you.&quot;),
+         # button for generating speech
+         actionButton(&quot;go&quot;, &quot;Generate speech&quot;)
+      ),
+      
+      # Show a plot of the generated distribution
+      mainPanel(
+         htmlOutput(&quot;speech&quot;)
+      )
+   )
+)
+
+# Define server logic 
+server &lt;- function(input, output) {
+  
+  # generating the speech
+  observeEvent(input$go, {
+    
+    output$speech &lt;- renderUI({
+      speech &lt;- speech_pool %&gt;%
+        # filter speech pool based on selected sentiment
+        filter(pool == input$pos_neg) %&gt;% 
+        select(id) %&gt;%
+        ## wrapped the input in isolate to stop the text from updating automaticly when input$lines changes
+        sample_n(isolate(input$lines)) %&gt;% 
+        paste(collapse = &quot; &lt;p/&gt; &quot;) %&gt;% 
+        ## little bit of cleaning of the final 'draft'  of the speech
+        str_replace_all(&quot;[^([:alnum:]|//.)]&quot;, &quot; &quot;) %&gt;%
+        str_sub(3, -3)
+      
+      welcome &lt;- isolate(input$welcome)
+      close &lt;- isolate(input$close)
+      
+      HTML(paste(welcome,speech, close, sep=&quot;&lt;p/&gt;&quot;))
+      
+      })
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+</code></pre>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+

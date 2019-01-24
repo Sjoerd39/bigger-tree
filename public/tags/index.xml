@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Ai</title>
+      <link>/tags/ai/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Antonio Sánchez</title>
       <link>/tags/antonio-s%C3%A1nchez/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
@@ -53,6 +62,15 @@
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/bigger-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Einsteinweek</title>
+      <link>/tags/einsteinweek/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/einsteinweek/</guid>
       <description></description>
     </item>
     
@@ -113,7 +131,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -152,6 +170,24 @@
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/seven-segment-displays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny</title>
+      <link>/tags/shiny/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speech Generator</title>
+      <link>/tags/speech-generator/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/speech-generator/</guid>
       <description></description>
     </item>
     

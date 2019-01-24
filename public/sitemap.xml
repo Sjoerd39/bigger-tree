@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2019/01/24/speech-generator/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/12/22/r-fireworks/</loc>
     <lastmod>2018-12-22T00:00:00+00:00</lastmod>
   </url>
@@ -62,6 +67,18 @@
   </url>
   
   <url>
+    <loc>/tags/ai/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/ai/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/antonio-s%C3%A1nchez/</loc>
     <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -81,7 +98,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,6 +111,18 @@
   <url>
     <loc>/categories/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/einsteinweek/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/einsteinweek/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -177,19 +206,19 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -242,8 +271,32 @@
   </url>
   
   <url>
+    <loc>/tags/shiny/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/shiny/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/smart-emission/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/speech-generator/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/speech-generator/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

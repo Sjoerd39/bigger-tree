@@ -6,10 +6,20 @@
     <description>Recent content in R on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Speech generator</title>
+      <link>/2019/01/24/speech-generator/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/01/24/speech-generator/</guid>
+      <description>I was asked to introduce an Artificial Intelligence workshop for government employees (colleagues). I thought i could do that through an (AI) speech generator. So I made one. Incorporating some Language Processing techniques I recently worked with.
+The generator contains the content of 45 speeches in Enlish, mainly of English and American statesman. The sentences are cleaned (minimally) and separated. Checked for their sentiment (positive or negative). In the app you can choose the overall sentiment of the speech and add your own welcoming and closing messages.</description>
+    </item>
     
     <item>
       <title>R fireworks!</title>
