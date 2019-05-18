@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Analytics</title>
+      <link>/categories/analytics/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Api</title>
       <link>/categories/api/</link>
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
@@ -120,9 +129,18 @@
     </item>
     
     <item>
+      <title>Privacy</title>
+      <link>/categories/privacy/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
@@ -206,6 +224,24 @@
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/strings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthetic Data</title>
+      <link>/categories/synthetic-data/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/synthetic-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthpop</title>
+      <link>/categories/synthpop/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/synthpop/</guid>
       <description></description>
     </item>
     

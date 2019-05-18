@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Synthetic Data on BiggeR-tRee</title>
+    <link>/tags/synthetic-data/</link>
+    <description>Recent content in Synthetic Data on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/synthetic-data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Synthetic Data</title>
+      <link>/2019/05/18/synthetic-data/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/05/18/synthetic-data/</guid>
+      <description>There is an increasing need to collaborate between government agencies in developing models to look for better ways to provide the services their citizens need. Often this involves working with a lot of privacy sensitive data. And therefore there are a lot of (legal) issues in sharing these data sets and subsequently the models. I have been looking for ways to generate synthetic data sets with the same properties and structure as the real data sets but without the real rows of data.</description>
+    </item>
+    
+  </channel>
+</rss>
