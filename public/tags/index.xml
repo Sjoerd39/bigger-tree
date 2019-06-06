@@ -102,9 +102,18 @@
     </item>
     
     <item>
+      <title>Generative Art</title>
+      <link>/tags/generative-art/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/generative-art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gganimate</title>
       <link>/tags/gganimate/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/gganimate/</guid>
       <description></description>
@@ -140,7 +149,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -197,6 +206,24 @@
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/speech-generator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spotify</title>
+      <link>/tags/spotify/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spotify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spotifyr</title>
+      <link>/tags/spotifyr/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spotifyr/</guid>
       <description></description>
     </item>
     
