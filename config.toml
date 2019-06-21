@@ -13,14 +13,19 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "About"
     url = "/about/"
 	weight = 1
+	
 [[menu.main]]
     name = "LinkedIn"
     url = "https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/"
+	weight = 2
+
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/Sjoerd39"
 	weight = 3
 
-
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "Bigger-Tree is a website built through Hugo and blogdown."
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
