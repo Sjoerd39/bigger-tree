@@ -19,6 +19,7 @@ The 7-hills running race (7-heuvelenloop) is a yearly running race in and around
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+source(authentication.R)
 ```
 
 ```{r libraries}
@@ -177,7 +178,8 @@ Getting the background map through `get_map`. This needs a registered google sta
 lat <- mean(c(max(route_times$Y), min(route_times$Y)))
 long <- mean(c(max(route_times$X), min(route_times$X)))
 
-register_google(key = "AIzaSyC8K2r3R1x4GNLFINGbH0-plIhAE63KnqM")
+# register_google(key = <google_key>)
+
 ## get the background map
 m <- get_map(c(long, lat), zoom = 13, 
              source = "stamen",
