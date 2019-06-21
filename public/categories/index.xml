@@ -6,35 +6,53 @@
     <description>Recent content in Categories on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>7hills</title>
-      <link>/categories/7hills/</link>
-      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      <title>R</title>
+      <link>/categories/r/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/7hills/</guid>
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>/categories/about/</link>
-      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      <title>generative art</title>
+      <link>/categories/generative-art/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/about/</guid>
+      <guid>/categories/generative-art/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ai</title>
-      <link>/categories/ai/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <title>gganimate</title>
+      <link>/categories/gganimate/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ai/</guid>
+      <guid>/categories/gganimate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spotify</title>
+      <link>/categories/spotify/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/spotify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spotifyR</title>
+      <link>/categories/spotifyr/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/spotifyr/</guid>
       <description></description>
     </item>
     
@@ -48,209 +66,11 @@
     </item>
     
     <item>
-      <title>Api</title>
-      <link>/categories/api/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Einsteinweek</title>
-      <link>/categories/einsteinweek/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/einsteinweek/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Feliz Navidad</title>
-      <link>/categories/feliz-navidad/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/feliz-navidad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fireworks</title>
-      <link>/categories/fireworks/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/fireworks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Forecast</title>
-      <link>/categories/forecast/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/forecast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Generative Art</title>
-      <link>/categories/generative-art/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/generative-art/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gganimate</title>
-      <link>/categories/gganimate/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/gganimate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Happy Holidays</title>
-      <link>/categories/happy-holidays/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/happy-holidays/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Happy New Year</title>
-      <link>/categories/happy-new-year/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/happy-new-year/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nijmegen</title>
-      <link>/categories/nijmegen/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/nijmegen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Privacy</title>
       <link>/categories/privacy/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/privacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Running</title>
-      <link>/categories/running/</link>
-      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/running/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scribbles</title>
-      <link>/categories/scribbles/</link>
-      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/scribbles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sensor</title>
-      <link>/categories/sensor/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/sensor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Seven Segment Displays</title>
-      <link>/categories/seven-segment-displays/</link>
-      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/seven-segment-displays/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shiny</title>
-      <link>/categories/shiny/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/shiny/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Smart Emission</title>
-      <link>/categories/smart-emission/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/smart-emission/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Speech Generator</title>
-      <link>/categories/speech-generator/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/speech-generator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spotify</title>
-      <link>/categories/spotify/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/spotify/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spotifyr</title>
-      <link>/categories/spotifyr/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/spotifyr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Streaming Data</title>
-      <link>/categories/streaming-data/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/streaming-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Strings</title>
-      <link>/categories/strings/</link>
-      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/strings/</guid>
       <description></description>
     </item>
     
@@ -273,6 +93,114 @@
     </item>
     
     <item>
+      <title>AI</title>
+      <link>/categories/ai/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>einsteinweek</title>
+      <link>/categories/einsteinweek/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/einsteinweek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shiny</title>
+      <link>/categories/shiny/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>speech generator</title>
+      <link>/categories/speech-generator/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/speech-generator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feliz navidad</title>
+      <link>/categories/feliz-navidad/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/feliz-navidad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fireworks</title>
+      <link>/categories/fireworks/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/fireworks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>happy holidays</title>
+      <link>/categories/happy-holidays/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/happy-holidays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>happy new year</title>
+      <link>/categories/happy-new-year/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/happy-new-year/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>/categories/api/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nijmegen</title>
+      <link>/categories/nijmegen/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/nijmegen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensor</title>
+      <link>/categories/sensor/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/sensor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smart emission</title>
+      <link>/categories/smart-emission/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/smart-emission/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Temperature</title>
       <link>/categories/temperature/</link>
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
@@ -282,7 +210,52 @@
     </item>
     
     <item>
-      <title>Waal</title>
+      <title>forecast</title>
+      <link>/categories/forecast/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/forecast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>streaming data</title>
+      <link>/categories/streaming-data/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/streaming-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scribbles</title>
+      <link>/categories/scribbles/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/scribbles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>7hills</title>
+      <link>/categories/7hills/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/7hills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>running</title>
+      <link>/categories/running/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/running/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>waal</title>
       <link>/categories/waal/</link>
       <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -291,11 +264,38 @@
     </item>
     
     <item>
-      <title>Water Levels</title>
+      <title>water levels</title>
       <link>/categories/water-levels/</link>
       <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/water-levels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>seven-segment displays</title>
+      <link>/categories/seven-segment-displays/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/seven-segment-displays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>strings</title>
+      <link>/categories/strings/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/strings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>/categories/about/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/about/</guid>
       <description></description>
     </item>
     
