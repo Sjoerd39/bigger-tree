@@ -6,179 +6,35 @@
     <description>Recent content in Tags on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      <title>7hills</title>
+      <link>/tags/7hills/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>/tags/7hills/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>generative art</title>
-      <link>/tags/generative-art/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      <title>About</title>
+      <link>/tags/about/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/generative-art/</guid>
+      <guid>/tags/about/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>gganimate</title>
-      <link>/tags/gganimate/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/gganimate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spotify</title>
-      <link>/tags/spotify/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/spotify/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spotifyR</title>
-      <link>/tags/spotifyr/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/spotifyr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Privacy</title>
-      <link>/tags/privacy/</link>
-      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/privacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>synthetic data</title>
-      <link>/tags/synthetic-data/</link>
-      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/synthetic-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>synthpop</title>
-      <link>/tags/synthpop/</link>
-      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/synthpop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI</title>
+      <title>Ai</title>
       <link>/tags/ai/</link>
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>einsteinweek</title>
-      <link>/tags/einsteinweek/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/einsteinweek/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shiny</title>
-      <link>/tags/shiny/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/shiny/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>speech generator</title>
-      <link>/tags/speech-generator/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/speech-generator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>feliz navidad</title>
-      <link>/tags/feliz-navidad/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/feliz-navidad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fireworks</title>
-      <link>/tags/fireworks/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/fireworks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>happy holidays</title>
-      <link>/tags/happy-holidays/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/happy-holidays/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>happy new year</title>
-      <link>/tags/happy-new-year/</link>
-      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/happy-new-year/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>APi</title>
-      <link>/tags/api/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Streaming data</title>
-      <link>/tags/streaming-data/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/streaming-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>forecast</title>
-      <link>/tags/forecast/</link>
-      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/forecast/</guid>
       <description></description>
     </item>
     
@@ -192,25 +48,142 @@
     </item>
     
     <item>
-      <title>scribbles</title>
-      <link>/tags/scribbles/</link>
-      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      <title>Api</title>
+      <link>/tags/api/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/scribbles/</guid>
+      <guid>/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>7hills</title>
-      <link>/tags/7hills/</link>
-      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      <title>Bigger Tree</title>
+      <link>/tags/bigger-tree/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/7hills/</guid>
+      <guid>/tags/bigger-tree/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>running</title>
+      <title>Einsteinweek</title>
+      <link>/tags/einsteinweek/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/einsteinweek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Feliz Navidad</title>
+      <link>/tags/feliz-navidad/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/feliz-navidad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fireworks</title>
+      <link>/tags/fireworks/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/fireworks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forecast</title>
+      <link>/tags/forecast/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/forecast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generative Art</title>
+      <link>/tags/generative-art/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/generative-art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gganimate</title>
+      <link>/tags/gganimate/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gganimate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Happy Holidays</title>
+      <link>/tags/happy-holidays/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/happy-holidays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Happy New Year</title>
+      <link>/tags/happy-new-year/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/happy-new-year/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Igraph</title>
+      <link>/tags/igraph/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/igraph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy</title>
+      <link>/tags/privacy/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Walk</title>
+      <link>/tags/random-walk/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/random-walk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>/tags/resume/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/resume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Running</title>
       <link>/tags/running/</link>
       <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -219,20 +192,92 @@
     </item>
     
     <item>
-      <title>waal</title>
-      <link>/tags/waal/</link>
-      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+      <title>Scribbles</title>
+      <link>/tags/scribbles/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/waal/</guid>
+      <guid>/tags/scribbles/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>water levels</title>
-      <link>/tags/water-levels/</link>
-      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+      <title>Seven Segment Displays</title>
+      <link>/tags/seven-segment-displays/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/water-levels/</guid>
+      <guid>/tags/seven-segment-displays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny</title>
+      <link>/tags/shiny/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speech Generator</title>
+      <link>/tags/speech-generator/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/speech-generator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spotify</title>
+      <link>/tags/spotify/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spotify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spotifyr</title>
+      <link>/tags/spotifyr/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spotifyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Streaming Data</title>
+      <link>/tags/streaming-data/</link>
+      <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/streaming-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strings</title>
+      <link>/tags/strings/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/strings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthetic Data</title>
+      <link>/tags/synthetic-data/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/synthetic-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthpop</title>
+      <link>/tags/synthpop/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/synthpop/</guid>
       <description></description>
     </item>
     
@@ -246,56 +291,29 @@
     </item>
     
     <item>
-      <title>seven-segment displays</title>
-      <link>/tags/seven-segment-displays/</link>
-      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      <title>Waal</title>
+      <link>/tags/waal/</link>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/seven-segment-displays/</guid>
+      <guid>/tags/waal/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>strings</title>
-      <link>/tags/strings/</link>
-      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      <title>Water Levels</title>
+      <link>/tags/water-levels/</link>
+      <pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/strings/</guid>
+      <guid>/tags/water-levels/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>words</title>
+      <title>Words</title>
       <link>/tags/words/</link>
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/words/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BiggeR TRee</title>
-      <link>/tags/bigger-tree/</link>
-      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/bigger-tree/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>/tags/about/</link>
-      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>resume</title>
-      <link>/tags/resume/</link>
-      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/resume/</guid>
       <description></description>
     </item>
     

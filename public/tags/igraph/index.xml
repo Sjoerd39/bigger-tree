@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Igraph on BiggeR-tRee</title>
+    <link>/tags/igraph/</link>
+    <description>Recent content in Igraph on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/igraph/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Random Walking</title>
+      <link>/2019/09/14/random-walking/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/14/random-walking/</guid>
+      <description>A short project to explore the use of random walk algorithms with the igraph package and make an awesome animation! Random walk algorithms are used to estimate how information spreads across a given graph. An example can be the spread of persons within the walking routes in a theme park. Another applications include the PageRank algorithm, famously invented by Google founder Larry Page to measure the importance of websites.
+Here we will try to make a person walk through a graph that for example can be the walking paths in a park.</description>
+    </item>
+    
+  </channel>
+</rss>
