@@ -107,4 +107,4 @@ imageOutput("plot1")
 
 The full code for the app is available at github: https://github.com/Sjoerd39/7hills_app. In a few weeks a new edition of the seven hills running race will be held. So then I'll update this app to contain the new times.
 
-I'm very pleased this app works now! In future post I'll talk about how to deploy this app to an AWS EC2 instance and how to give it it's own domain so you can acces it from a regular webadress.
+I'm very pleased this app works now! In a future post I'll talk about how to deploy this app to an AWS EC2 instance and how to give it it's own domain so you can access it from a regular web address.
