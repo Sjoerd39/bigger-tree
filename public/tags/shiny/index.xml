@@ -6,10 +6,20 @@
     <description>Recent content in Shiny on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/shiny/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2 animated race shiny app</title>
+      <link>/2019/10/12/2-animated-race-shiny-app/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/10/12/2-animated-race-shiny-app/</guid>
+      <description>Post number 2? Yes! In an earlier post I made an animation of a running race. Since then I wanted to make a shiny app out of this idea so that people can add themselves on the track and animate their own race. And now it&amp;rsquo;s finally finished! You can try it for yourself here: seven hills race app.
+I&amp;rsquo;ll explain some of the more important components of the app. The first thing is processing the user input.</description>
+    </item>
     
     <item>
       <title>Speech generator</title>

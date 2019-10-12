@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2019/10/12/2-animated-race-shiny-app/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/09/14/random-walking/</loc>
     <lastmod>2019-09-14T00:00:00+00:00</lastmod>
   </url>
@@ -59,13 +64,13 @@
   
   <url>
     <loc>/tags/7hills/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/7hills/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,7 +124,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-09-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -131,7 +136,7 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -197,7 +202,7 @@
   
   <url>
     <loc>/tags/gganimate/</loc>
-    <lastmod>2019-09-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -251,7 +256,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-09-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -275,7 +280,7 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2019-09-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -305,7 +310,7 @@
   
   <url>
     <loc>/categories/running/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -341,13 +346,13 @@
   
   <url>
     <loc>/tags/shiny/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/shiny/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -443,7 +448,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

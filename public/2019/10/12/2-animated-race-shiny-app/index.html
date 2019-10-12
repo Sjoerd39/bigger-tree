@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>2 animated race shiny app - BiggeR-tRee</title>
+<meta property="og:title" content="2 animated race shiny app - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+    <li><a href="https://github.com/Sjoerd39">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">2 animated race shiny app</h1>
+
+    
+    <span class="article-date">2019/10/12</span>
+    
+
+    <div class="article-content">
+      <p>Post number 2? Yes! In an earlier <a href="https://www.bigger-tree.org/2018/11/07/running-a-race-animated/">post</a> I made an animation of a running race. Since then I wanted to make a shiny app out of this idea so that people can add themselves on the track and animate their own race. And now it&rsquo;s finally finished! You can try it for yourself here: <a href="https://sjoerd.shinyapps.io/run_anim_app/">seven hills race app</a>.</p>
+
+<p>I&rsquo;ll explain some of the more important components of the app. The first thing is processing the user input. I experimented with a lot of different methods, including the <code>R timeInput</code> from the <a href="https://github.com/burgerga/shinyTime">shinyTime package</a>, but the easiest way i found is a combination of free text input and some text processing. Only downside is that input without the required structure will not work.</p>
+
+<pre><code class="language-r">textAreaInput(label = &quot;&quot;, inputId = &quot;kmtimes&quot;, width = &quot;250px&quot;, height = &quot;320px&quot;,
+                  placeholder =  &quot;00:02:45
+                  00:05:28
+                  00:08:19
+                  00:11:08
+                  00:14:07
+                  00:16:53
+                  00:19:37
+                  00:22:30
+                  00:25:17
+                  00:27:49
+                  00:30:38
+                  00:33:19
+                  00:35:54
+                  00:38:28
+                  00:41:05&quot;),
+</code></pre>
+
+<p>The text processing consists of splitting the output in different lines and detecting the time input from the user. And then add some missing information for later processing and important for the labelling.</p>
+
+<pre><code class="language-r">  ## input times processing
+  user_data &lt;- eventReactive(input$run, {
+    text &lt;- input$kmtimes
+    text &lt;- strsplit(text, &quot;\n&quot;) %&gt;% 
+      as.data.frame()
+    
+    names(text) &lt;- c(&quot;time&quot;)
+    
+    text &lt;- text %&gt;% 
+      mutate(time = as.character(time),
+             time = str_extract(time, &quot;[0-9]*:*[0-9]+:[0-9]+&quot;),
+             time = str_pad(time, 8, side = &quot;left&quot;, pad = &quot;0&quot;),
+             time = ifelse(str_detect(time, &quot;000&quot;) == T, str_replace(time, &quot;000&quot;, &quot;00:&quot; ), time),
+             runners = &quot;you&quot;,
+             km = row_number())
+    })
+</code></pre>
+
+<p>To generate the gif in the output a regular <code>R imageOutput</code> can be used. On the server side, you have to make sure that there is a temporary outfile created. And make sure the <code>R anim_save</code> command writes the animation to this outfile. Plus make sure that the eventual file is deleted after it&rsquo;s made to make space for a new animation.</p>
+
+<pre><code class="language-r">## in UI
+imageOutput(&quot;plot1&quot;)
+
+## in server
+
+      outfile &lt;- tempfile(fileext='.gif')
+
+      p &lt;- ggmap(m) +
+        scale_x_continuous(limits = c(min(route_times$X), max(route_times$X)), expand = c(0.0015, 0.0015)) +
+        scale_y_continuous(limits = c(min(route_times$Y), max(route_times$Y)), expand = c(0.0015, 0.0015)) +
+        geom_point(data = route_times_15sec, aes(x = X, y = Y,
+                                                 color = as.factor(runners)), size = 5)+
+        geom_label_repel(data = route_times_15sec,
+                         aes(x = X, y = Y,
+                             fill = as.factor(runners),
+                             label = label_t),
+                         size = 4, fontface = &quot;bold&quot;,
+                         box.padding = 0.35, point.padding = 1,
+                         nudge_y = 0.0025, nudge_x = 0.02) +
+        geom_label(data = race_time,
+                   aes(x =  5.867, y = 51.79665,label = label_time),
+                   size = 4.5, color = &quot;black&quot;, fill = &quot; white&quot;, fontface = &quot;bold&quot;, hjust = &quot;left&quot;) +
+        theme_void() +
+        theme(legend.position = &quot;none&quot;) +
+        # gg animate options
+        transition_reveal(sec15) +
+        ease_aes(&quot;linear&quot;)
+      
+      anim_save(&quot;outfile.gif&quot;, animate(p, nframes = nr_frames(), width = 400, height = 400))
+      
+      # Return a list containing the filename
+      list(src = &quot;outfile.gif&quot;,
+           contentType = 'image/gif')
+           
+        
+      })
+      }, deleteFile = TRUE)
+</code></pre>
+
+<p>The full code for the app is available at github: <a href="https://github.com/Sjoerd39/7hills_app">https://github.com/Sjoerd39/7hills_app</a>. In a few weeks a new edition of the seven hills running race will be held. So then I&rsquo;ll update this app to contain the new times.</p>
+
+<p>I&rsquo;m very pleased this app works now! In future post I&rsquo;ll talk about how to deploy this app to an AWS EC2 instance and how to give it it&rsquo;s own domain so you can acces it from a regular webadress.</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+
