@@ -6,10 +6,20 @@
     <description>Recent content in R on BiggeR-tRee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Happy holidays!</title>
+      <link>/2019/12/25/happy-holidays/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/12/25/happy-holidays/</guid>
+      <description>Happy holidays to you all! For a short project I turned the population pyramid of the city Nijmegen, the Netherlands into a shiny christmas tree.
+The rough translation of the text is &amp;lsquo;have a good/ nice holiday and a significant happy new year&amp;rsquo;. The code for this tree you can see below. It has several sections, but the tree and the baubles are made in seperate dataframes but with the same time reference.</description>
+    </item>
     
     <item>
       <title>Random Walking</title>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Christmas Tree on BiggeR-tRee</title>
+    <link>/categories/christmas-tree/</link>
+    <description>Recent content in Christmas Tree on BiggeR-tRee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/christmas-tree/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Happy holidays!</title>
+      <link>/2019/12/25/happy-holidays/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/12/25/happy-holidays/</guid>
+      <description>Happy holidays to you all! For a short project I turned the population pyramid of the city Nijmegen, the Netherlands into a shiny christmas tree.
+The rough translation of the text is &amp;lsquo;have a good/ nice holiday and a significant happy new year&amp;rsquo;. The code for this tree you can see below. It has several sections, but the tree and the baubles are made in seperate dataframes but with the same time reference.</description>
+    </item>
+    
+  </channel>
+</rss>

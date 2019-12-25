@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.31" />
+
+
+<title>Happy holidays! - BiggeR-tRee</title>
+<meta property="og:title" content="Happy holidays! - BiggeR-tRee">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="60"
+         height="60"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/sjoerd-dikkerboom-74021918/">LinkedIn</a></li>
+    
+    <li><a href="https://github.com/Sjoerd39">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-120826234-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">Happy holidays!</h1>
+
+    
+    <span class="article-date">2019/12/25</span>
+    
+
+    <div class="article-content">
+      <p>Happy holidays to you all! For a short project I turned the <a href="https://public.tableau.com/shared/4RHQ9W23W?:display_count=y&amp;:origin=viz_share_link">population pyramid of the city Nijmegen, the Netherlands</a> into a shiny christmas tree.</p>
+
+<p><img src="/post/2019-12-25-happy-holidays/happy_holidays.gif" alt="" /></p>
+
+<p>The rough translation of the text is &lsquo;have a good/ nice holiday and a significant happy new year&rsquo;. The code for this tree you can see below. It has several sections, but the tree and the baubles are made in seperate dataframes but with the same time reference. In the end both layers are combined in one animation.</p>
+
+<pre><code class="language-r">#### libraries ####
+library(tidyverse)
+library(gganimate)
+
+#### colours ####
+col_tree &lt;- c(&quot;forestgreen&quot;, &quot;green4&quot;, &quot;darkgreen&quot;)
+col_balls &lt;- c(&quot;magenta&quot;, &quot;deeppink&quot;, &quot;yellow1&quot;, &quot;orange&quot;, &quot;cyan&quot;, &quot;deepskyblue1&quot;, &quot;springgreen1&quot;, &quot;green&quot;, 
+               &quot;gold&quot;, &quot;chartreuse1&quot;, &quot;aquamarine1&quot;, &quot;darkorchid&quot;, &quot;plum1&quot;, &quot;tomato&quot;, &quot;red2&quot;, &quot;peachpuff1&quot;)
+
+#### data tree #####
+data &lt;- structure(list(age_grp = c(&quot;0-4&quot;, &quot;0-4&quot;, 
+                                           &quot;05-09&quot;, &quot;05-09&quot;, 
+                                           &quot;10-14&quot;, &quot;10-14&quot;, 
+                                           &quot;15-19&quot;, &quot;15-19&quot;, 
+                                           &quot;20-24&quot;, &quot;20-24&quot;, 
+                                           &quot;25-29&quot;, &quot;25-29&quot;, 
+                                           &quot;30-34&quot;, &quot;30-34&quot;, 
+                                           &quot;35-39&quot;, &quot;35-39&quot;, 
+                                           &quot;40-44&quot;, &quot;40-44&quot;, 
+                                           &quot;45-49&quot;, &quot;45-49&quot;, 
+                                           
+                                           &quot;50-54&quot;, &quot;50-54&quot;, &quot;55-59&quot;, &quot;55-59&quot;, &quot;60-64&quot;, &quot;60-64&quot;, 
+                                           &quot;65-69&quot;, &quot;65-69&quot;, &quot;70-74&quot;, &quot;70-74&quot;, &quot;75-79&quot;, &quot;75-79&quot;, &quot;80-84&quot;, 
+                                           &quot;80-84&quot;, &quot;85-89&quot;, &quot;85-89&quot;, &quot;90+&quot;, &quot;90+&quot;), 
+                       sex = c(&quot;M&quot;, &quot;V&quot;, 
+                                    &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, 
+                                    &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, 
+                                    &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;, &quot;M&quot;, &quot;V&quot;), 
+                       n_person = c(4254L, 4042L, 
+                                           4104L, 3964L, 
+                                           4030L, 3899L, 
+                                           4689L, 5114L, 
+                                           9004L, 11863L, 
+                                           8936L, 9160L, 
+                                           6603L, 6307L, 
+                                           5340L, 5304L, 
+                                           5043L, 4932L, 
+                                           5244L, 5158L, 
+                                           5550L, 5527L, 5454L, 5666L, 4899L, 5193L, 4388L, 4689L, 
+                                           3736L, 4100L, 2312L, 2699L, 1511L, 2038L, 737L, 1344L, 308L, 
+                                           710L)), row.names = c(NA, -38L), class = c(&quot;tbl_df&quot;, 
+                                                                                      &quot;tbl&quot;, &quot;data.frame&quot;)) %&gt;% 
+  mutate(id = row_number())
+
+
+
+data$time &lt;- as.numeric(as.factor(data$age_grp))
+
+data &lt;- data %&gt;%
+  mutate(time = (time / 10) + 3) 
+
+#### tree data ####
+## add data_tree_end in the end to keep the branches in the animation
+data_tree_end &lt;- data %&gt;% 
+  mutate(time = time + 8,
+         colr = sample(col_tree, nrow(data), replace = T)) %&gt;% 
+  mutate(n_person = ifelse(sex == &quot;M&quot;, -1 * n_person, n_person))
+
+data_tree &lt;- data %&gt;% 
+  bind_rows(data %&gt;% mutate(n_person = 0,
+                            time = time - 3
+                            )) %&gt;% 
+  mutate(colr = rep(c(&quot;skyblue1&quot;, &quot;coral&quot;), nrow(data))) %&gt;% 
+  mutate(n_person = ifelse(sex == &quot;M&quot;, -1 * n_person, n_person)) %&gt;% 
+  bind_rows(data_tree_end)
+
+#### balls start####
+
+## getting boundaries of the barplot
+
+height_min &lt;- seq(from = 0.5, to = 18.5, by = 1)
+height_max &lt;- height_min + 1
+left &lt;- data %&gt;% filter(sex == &quot;M&quot;) %&gt;% select(n_person) %&gt;% mutate(n_person = -1 * n_person) %&gt;% unlist()
+right &lt;- data %&gt;% filter(sex == &quot;V&quot;) %&gt;% select(n_person) %&gt;% unlist()
+
+## almost random balls in tree within the limits
+
+pos_balls &lt;- list()
+
+for (i in seq_along(height_min)) {
+  
+data_branch_left &lt;- data.frame(x = runif(abs(ceiling(left[[i]] / 1000)), min = height_min[[i]], max = height_max[[i]]),
+                             y = runif(abs(ceiling(left[[i]] / 1000)), min = left[[i]], max = 0))
+  
+data_branch_right &lt;- data.frame(x = runif(abs(floor(right[[i]] / 1000)), min = height_min[[i]], max = height_max[[i]]),
+                              y = runif(abs(floor(right[[i]] / 1000)), min = 0, max = right[[i]]))
+
+
+pos_balls[[i]] &lt;- bind_rows(data_branch_left, data_branch_right)
+  
+}
+
+data_balls_start &lt;- bind_rows(pos_balls)
+data_balls_start &lt;- data_balls_start %&gt;% 
+  mutate(time = runif(nrow(data_balls_start), -1, 5) + max(data_tree$time) - 1,
+         colr = sample(col_balls, nrow(data_balls_start), replace = T),
+         id = row_number() + 10000,
+         sze = runif(nrow(data_balls_start), 2, 4))
+
+#### balls iterations, change color and size ####
+
+n_balls &lt;- list()
+t &lt;- max(data_tree$time) + 2
+
+for(i in 1:120){
+  t &lt;- t + 2
+  
+  balls_t &lt;- data_balls_start %&gt;% 
+    mutate(time = runif(nrow(data_balls_start), 0, 2) + t,
+           colr = sample(col_balls, nrow(data_balls_start), replace = T),
+           sze = sze + runif(nrow(data_balls_start), -0.2, 0.2))
+  
+  n_balls[[i]] &lt;- balls_t
+  
+}
+
+## add it all together
+data_balls &lt;- data_balls_start %&gt;% 
+  bind_rows(n_balls)
+
+#### label ####
+
+label_1 &lt;- data.frame(text = c(&quot;Fijne feestdagen en een&quot;), stringsAsFactors = FALSE) %&gt;% 
+  mutate(time = 15)
+
+label_1 &lt;- label_1 %&gt;% 
+  bind_rows(label_1 %&gt;% mutate(time = max(data_balls$time)))
+
+text_1 &lt;- c(&quot;Fijne feestdagen en een&quot;) 
+text_2 &lt;- c(&quot;significant gelukkig nieuwjaar! &quot;)
+
+#### add endtime for branches ####
+
+data_tree &lt;- data_tree %&gt;% 
+  bind_rows(data_tree_end %&gt;% 
+              mutate(time = max(data_balls$time)))
+
+#### animation ####
+
+plot &lt;- ggplot() + 
+  geom_col(data = data_tree, 
+           aes(x = age_grp, 
+               y = n_person, 
+               fill = colr,
+               group = id)) +
+  scale_fill_identity() +
+  geom_point(data = data_balls, aes(x, y, color = colr, group = id, size = sze)) +
+  scale_color_identity() +
+  coord_flip() +
+  theme_void() +
+  theme(legend.position = &quot;none&quot;) +
+  theme(plot.background = element_rect(fill = 'black', colour = NA), 
+        panel.border = element_blank()) +
+  geom_label(data = label_1, label = text_1, x = 22, y = 0, family = &quot;mono&quot;, fontface = &quot;bold&quot;, fill = &quot;gold&quot;, size = 6.5) +
+  geom_label(data = label_1, label = text_2, x = 20.5, y = 0, family = &quot;mono&quot;, fontface = &quot;bold&quot;, fill = &quot;gold&quot;, size = 6.5)+
+  expand_limits(x = c(0.5, 22.5), y = c(-12000, 12000)) +
+  transition_components(time) +
+  ### bouncy animation makes the transitions fun =).. it's ok for the baubles coulor changes and the tree itself
+  ease_aes(&quot;bounce-out&quot;)
+
+animate(plot, nframes = 2000)
+anim_save(&quot;happy_holidays.gif&quot;)
+</code></pre>
+
+<p>See you in the next decade!</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//bigger-tree.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+
