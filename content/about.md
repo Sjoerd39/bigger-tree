@@ -11,7 +11,7 @@ tags:
   - BiggeR TRee
 ---
 
-Hello! My name is Sjoerd Dikkerboom. Currently I'm employed at the municipality of Nijmegen (the Netherlands) as a Researcher. I have a masters degree both in Sociology and Urban Geography. In my work I specialize in quantitative research and data science. In my free time i'm learning chinese with some succes: 你好，我的中文名字是大树 =). And sometimes i like to tinker with R and write about it here. <br></br>
+Hello! My name is Sjoerd Dikkerboom. Currently I'm living in Beijing, China. In my work I specialize in quantitative research and data science. I have a masters degree both in Sociology and Urban Geography. In my free time i'm learning chinese with some succes: 你好，我的中文名字是大树 =). And sometimes i like to tinker with R and write about it here. <br></br>
 And this is me =) :
 
 ![](ik.jpg)
